@@ -1,39 +1,35 @@
 #include <bits/stdc++.h>
+#define ll long long
 
 using namespace std;
 
-ifstream input("sleepInClass.txt");
-
 void solve(){
-    int n;input>>n; 
-    int sumA = 0;int nums[n];
-    for(int i = 0;i<n;i++){
-        input>>nums[i];sumA+=nums[i];
+    int N; cin >> N; 
+    vector<ll> arr(N);
+    ll sum = 0;
+    for(int i = 0; i < N;i++){
+        ll x; cin >> x;
+        sum+=x;
+        arr[i] = x;
     }
-    for(int r = n; r >= 1;r--){
-        if(sumA % r == 0){
-            int target = sumA / r, currSum = 0; 
+    for(int r = N; r >= 1;r--){
+        if(!sum%r){
+            ll currSum = 0;
             bool ok = true; 
-            for(int i = 0; i < n;i++){
-                currSum+=nums[i];
-                if(currSum > target){
-                    ok = false;
-                    break;
-                }
-                if(currSum == target){
-                    currSum = 0; 
+            for(int i = 0; i < N;i++){
+                currSum+=arr[i];
+                if(currSum == sum/r){
+                    
                 }
             }
-            if(ok){
-                cout << n - r << endl;
-                return;
-            }
+            
         }
     }
+    
 }
 
 int main(){
-    int t;input>>t;
+    int t;cin>>t;
     for(int i = 0;i<t;i++){
         solve();
     }

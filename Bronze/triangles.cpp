@@ -1,50 +1,40 @@
 #include <bits/stdc++.h>
 
-using namespace std; 
+using namespace std;
 
-int calcDist(int x1,int y1,int x2,int y2){
-    if(x2 == x1){
-        return max(y2,y1) - min(y2,y1);
-    }
-    if(y2 == y1){
-        return max(x2,x1) - min(x2,x1); 
-    }
-    return sqrt(((y2-y1)*(y2-y1))+((x2-x1)*(x2-x1))); 
-    
-}
-bool isParellel(int x1,int y1,int x2, int y2){
-    if(x2 == x1){
-        return true;
-    }
-    if(y2 == y1){
-        return true; 
-    }
-    return false;
+bool isValid(pair<int,int> c1, pair<int, int> c2, pair<int,int> c3){
+    bool x = false; 
+    bool y = false; 
+    if(c1.first == c2.first || c2.first == c3.first || c1.first == c3.first)y = true; 
+    if(c1.second == c2.second || c2.second == c3.second || c1.second == c3.second) x = true;
+    return x && y;
 }
 
+int calcArea(pair<int, int> c1, pair<int,int> c2, pair<int,int> c3){
+    int ys; int xs; 
+    if(c1.first == c2.first) ys = abs(c1.second - c2.second);
+    if(c2.first == c3.first) ys = abs(c2.second - c3.second);
+    if(c1.first == c3.first) ys = abs(c1.second - c3.second);
+    if(c1.second == c2.second) xs = abs(c1.first - c2.first);
+    if(c2.second == c3.second) xs = abs(c2.first - c3.first);
+    if(c1.second == c3.second) xs = abs(c1.first - c3.first);
+    return xs*ys;
+}
 
 int main(){
-    ifstream input("triangles.txt");
-    int numCoordinates;
-    input >> numCoordinates;
-    pair<int, int> arr[100];
-    vector<int> distances; 
-    for(int i = 0; i < numCoordinates;i++){
-        input >> arr[i].first >> arr[i].second; 
+    freopen("triangles.txt","r", stdin);
+    int n; cin >> n; 
+    vector<pair<int,int>> coordinates(n);
+    for(auto& x : coordinates){
+        cin >> x.first >> x.second;
     }
-    for(int i = 0; i < numCoordinates - 1; i++){
-        for(int j = i+1; j < numCoordinates; j++){
-            if(isParellel(arr[i].first,arr[i].second,arr[j].first,arr[j].second)){
-                distances.push_back(calcDist(arr[i].first,arr[i].second,arr[j].first,arr[j].second));
-            }
+    int maxArea = INT16_MIN;
+    for(int i = 0; i < n;i++) for(int j = i+1;j < n;j++) for(int k = j+1; k < n;k++){
+        if(isValid(coordinates[i],coordinates[j],coordinates[k])){
+            maxArea = max(maxArea,calcArea(coordinates[i],coordinates[j],coordinates[k]));
         }
     }
-    double maxnum = 0.0;
-    for(int i = 0; i < distances.size(); i++){
-        for(int j = 0;j < distances.size();j++){
-            maxnum = max(maxnum, 0.5*distances[i]*distances[j]);
-        }
-    }
-    cout << maxnum << endl;
+    cout << maxArea << endl;
+
     return 0; 
 }

@@ -2,56 +2,34 @@
 
 using namespace std; 
 
-int ans = 0; 
 char grid[50][50];
-int k;
+int k, n;
 
-void recursive(int x, int y, int n, int directionsChanged, char direction){
-    if(x >= n || x < 0 || y >= n || y < 0){
-        return;
-    }
-    if(grid[x][y] == 'H'){
-        return;
-    }
-    if(x == n-1 && y == n-1){
-        ans++; 
-        return;
-    }
-    if(directionsChanged > k){
-        return;
-    }
-    if(direction == 'D'){
-        recursive(x,y+1,n,directionsChanged,direction);
-        recursive(x+1,y,n,directionsChanged+1,'R');
+int recursive(int x, int y, int directionsChanged, char direction){
+    if(x >= n || y >= n)return 0;
+    if(grid[x][y] == 'H')return 0;
+    if(directionsChanged > k)return 0;
+    if(x == n-1 && y == n-1)return 1;
+    if(direction == '\0'){
+        return recursive(x+1,y,0,'D') + recursive(x,y+1,0,'R');
+    }else if(direction == 'D'){
+        return recursive(x+1,y,directionsChanged,'D') + recursive(x,y+1,directionsChanged+1,'R');
     }else{
-        recursive(x+1,y,n,directionsChanged,direction);
-        recursive(x,y+1,n,directionsChanged+1,'D');
+        return recursive(x+1,y,directionsChanged+1,'D') + recursive(x,y+1,directionsChanged,'R');
     }
 
-    
 }
-
-
-
-void solve(){
-    int n;cin>>n>>k;
-    for(int i = 0; i < n;i++){
-        for(int j = 0; j < n;j++){
-            cin >> grid[i][j];
-        }
-    }
-    recursive(0,0,n,0,'D');
-    cout << ans << endl;
-    ans = 0;
-}
-
 
 int main(){
-    freopen("walkHome.txt", "r", stdin);
     int t;cin>>t;
     for(int i = 0; i < t;i++){
-        solve();
+        cin>>n>>k;
+        for(int i = 0; i < n;i++){
+            for(int j = 0; j < n;j++){
+                cin >> grid[i][j];
+            }
+        }
+        cout << recursive(0,0,0, '\0') << endl;
     }
-
     return 0;
 }
