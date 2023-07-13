@@ -4,6 +4,7 @@ using namespace std;
 
 int main(){
     ifstream input("gymnastics.in");
+    freopen("gymnastics.out","w",stdout);
     int k, n;
     input >> k >> n; 
     int rankings[n]{};

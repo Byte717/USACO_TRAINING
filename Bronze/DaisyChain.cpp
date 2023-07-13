@@ -2,22 +2,38 @@
 
 using namespace std;
 
+// bool isAverage(vector<int> arr, int i, int j){
+//     int sum = 0;
+//     for(int x = i; x <= j;x++){
+//         sum+=arr[x];
+//     } 
+//     float avg = (float)sum/(j-i+1);
+//     int NotAvg = sum/(j-i+1);
+//     if(!(avg - NotAvg > 0)){
+//         for(int x = i; x <= j;x++){
+//             if(arr[x] ==  avg){
+//                 return true;
+//         }
+//     }
+//     return false;
+//     }
+// }
+
+
 bool isAverage(vector<int> arr, int i, int j){
-    int sum = 0;
+    int Sum = 0;
     for(int x = i; x <= j;x++){
-        sum+=arr[x];
-    } 
-    float avg = (float)sum/(j-i+1);
-    int NotAvg = sum/(j-i+1);
-    if(!(avg - NotAvg > 0)){
-        for(int x = i; x <= j;x++){
-            if(arr[x] ==  avg){
-                return true;
+        Sum += arr[x];
+    }
+    int average  = Sum/(j-i+1);
+
+    for(int x = i; x <= j;x++){
+        if(arr[x] == average){
+            return true;
         }
     }
     return false;
-    }
-    return false;
+
 }
 
 

@@ -9,8 +9,9 @@ int main(){
     fill(start,start+26, -1);
     fill(end,end+26, -1);
     for(int i = 0;i < s.size();i++){
-        if(start[s[i]-'A'] == -1) start[s[i]-'A'] = i;
-        else end[s[i]-'A'] = i;
+        int curr = s[i]-'A';
+        if(start[curr] == -1) start[curr] = i;
+        else end[curr] = i;
     }
     int ans = 0;
     for(int i = 0;i < 26;i++){
@@ -21,3 +22,4 @@ int main(){
     cout << ans << endl;
     return 0;
 }
+

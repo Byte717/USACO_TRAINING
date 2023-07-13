@@ -12,5 +12,6 @@ int dirY[] = {0, 1, 0, -1};
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
+    int n,x; cin >> n >> x;
     return 0;
 }
