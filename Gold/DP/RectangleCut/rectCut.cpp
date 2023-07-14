@@ -13,7 +13,7 @@ int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
     int a, b; cin >> a >> b;
-    vector<vector<int>> dp(a+1, vector<int>(b+1,));
+    vector<vector<int>> dp(a+1, vector<int>(b+1,INF));
     if(a == b){cout << 0 << endl; return 0;}
     for(int i = 0; i <= a;i++){
         for(int j = 0; j <= b;j++){
