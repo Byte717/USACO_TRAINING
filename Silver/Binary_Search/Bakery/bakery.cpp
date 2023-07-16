@@ -22,7 +22,7 @@ void solve(){
     }
     // ai * tc + bi * tm <= ci
 
-    auto works = [&](ll total){
+    auto bruteForce = [&](ll total){
         // (true, true) if all n friends satisfied,
         // (false, false) if both values are too high
             // how do we define if values are too high?
@@ -44,6 +44,33 @@ void solve(){
         return false;
     };
 
+    auto works2 = [&](ll x, ll y){
+        for(int i = 0; i < n;i++){
+            if(v[i].a * x + v[i].b * y > v[i].c){
+                return false;
+            }
+        }
+        return true;
+    };
+
+    auto works = [&](ll total){
+        // x + y <= total
+        // y <= total - x or x <= total - y
+        // ai *x + bi*y <= ci
+        // x <= ci-bi*(total-x)/ai ->
+        ll x, y;
+        ll low = 0, high = total, mid;
+        while(low <= high){
+            mid = low + (high-low)/2;
+            x = tc - mid; y = tm - (total - mid);
+            if(works2(x, y) || works2(y,x)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        return false;
+    };
     ll low = 0, high = tc+tm, ans;
     while(low <= high){
         ll mid = low + (high-low)/2;
