@@ -23,16 +23,13 @@ void solve(){
     // ai * tc + bi * tm <= ci
 
     auto bruteForce = [&](ll total){
-        // (true, true) if all n friends satisfied,
-        // (false, false) if both values are too high
-            // how do we define if values are too high?
-        // ()
         int x, y; 
-        for(int i = 1; i < total-1;i++){
-            x = i; y = total-i;
+        for(int i = 0; i <= total;i++){
+            x = tc-i; y = tm-(total-i);
             bool works = true;
             for(auto &i : v){
-                if(i.a*x+i.b*y <= i.c){
+                ll time = i.a*x+i.b*y;
+                if(time <= i.c){
                     continue;
                 }else{
                     works = false;
@@ -44,51 +41,62 @@ void solve(){
         return false;
     };
 
-    auto works2 = [&](ll x, ll y){
-        for(int i = 0; i < n;i++){
-            if(v[i].a * x + v[i].b * y > v[i].c){
-                return false;
-            }
-        }
-        return true;
-    };
+    // auto works2 = [&](ll x, ll y){
+    //     for(int i = 0; i < n;i++){
+    //         if(v[i].a * x + v[i].b * y > v[i].c){
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // };
 
-    auto works = [&](ll total){
-        // x + y <= total
-        // y <= total - x or x <= total - y
-        // ai *x + bi*y <= ci
-        // x <= ci-bi*(total-x)/ai ->
-        ll x, y;
-        ll low = 0, high = total, mid;
-        while(low <= high){
-            mid = low + (high-low)/2;
-            x = tc - mid; y = tm - (total - mid);
-            if(works2(x, y) || works2(y,x)){
-                return true;
-            }else{
-                return false;
-            }
-        }
-        return false;
-    };
+    // auto works = [&](ll total){
+    //     // x + y <= total
+    //     // y <= total - x or x <= total - y
+    //     // ai *x + bi*y <= ci
+    //     // x <= ci-bi*(total-x)/ai ->
+    //     ll x, y;
+    //     ll low = 0, high = total, mid;
+    //     while(low <= high){
+    //         mid = low + (high-low)/2;
+    //         x = max(tc - mid, (ll)0); y = max(tm - (total - mid),(ll)0);
+    //         if(works2(x, y)){
+    //             return true;
+    //         }else{
+    //             y = max(tm - mid, (ll)0); x = max(tc - (total - mid),(ll)0);
+    //         }
+    //         if(works2(x,y)){
+    //             return true;
+    //         }else{
+    //             return false;
+    //         }
+    //     }
+    //     return false;
+    // };
+    // cout << bruteForce(11) << endl;
     ll low = 0, high = tc+tm, ans;
     while(low <= high){
         ll mid = low + (high-low)/2;
-        if(works(mid)){
+        if(bruteForce(mid)){
             ans = mid;
             high = mid - 1;
         }else{
             low = mid + 1;
         }
     }
-    cout << ans << endl;
+    cout << ans << " ";
 }
 
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("bakery.in","r",stdin);
+    ifstream input("bakery.out");
     int t; cin >> t;
-    while(t--){solve();}
+    for(int i = 0; i < t;i++){
+        solve();
+        int a; input >> a;
+        cout << a << endl;
+    }
     return 0;
 }

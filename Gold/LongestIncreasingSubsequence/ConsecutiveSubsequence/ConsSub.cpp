@@ -18,17 +18,20 @@ int main(){
         cin >> arr[i];
     }
     vector<int> lis;
-    for(int &i: arr){
-        int pos = lower_bound(lis.begin(),lis.end(),i) - lis.begin();
+    vector<int> idx;
+    for(int i = 0; i < n;i++){
+        int pos = lower_bound(lis.begin(),lis.end(),arr[i]) - lis.begin();
         if(pos == lis.size()){
-            lis.push_back(i);
+            lis.push_back(arr[i]);
+            idx.push_back(i);
         }else{
-            lis[pos] = i;
+            lis[pos] = arr[i];
+            idx[pos] = i;
         }
     }
     cout << lis.size() << endl;
-    for(int i = 0; i < lis.size();i++){
-        cout << lis[i] << " ";
+    for(int i = 0; i < idx.size();i++){
+        cout << idx[i] << " ";
     }
     cout << endl;
     return 0;
