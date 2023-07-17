@@ -80,10 +80,16 @@ int main(){
         if(type == 1){
             int node, val; cin >> node >> val;
             s.set(start[--node],val);
+        }else{
+            int node;
+            cin >> node;
+            int endSum = s.query(end[node]-1);
+            int StartSum = 0;
+            if(start[node] != 0){
+                StartSum = s.query(start[node]-1);
+            }
+            cout << endSum - StartSum << endl;
         }
     }
-
-
-
     return 0;
 }

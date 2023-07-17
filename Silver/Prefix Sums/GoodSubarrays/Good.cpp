@@ -28,7 +28,7 @@ int main(){
     int good = 0;
     for(int i = 0; i < n;i++){
         int curr = pref[i] - i;
-        good += m[curr];
+        good += (m[curr] * (m[curr]-1))/2;
     }
     cout << good << endl;
     return 0;
