@@ -13,9 +13,7 @@ int dirY[] = {0, 1, 0, -1};
 
 int LOG2(int n){
     int ret = 0; 
-    while((1<<(ret+1)) <= n){
-        ret++;
-    }
+    while((1<<(ret+1)) <= n){ret++;}
     return ret;
 }
 
