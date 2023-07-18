@@ -37,7 +37,29 @@ int main(){
         int amount = cows[cowIdx];
         int sellMoney = 0;
         int currStore = storeIdx;
-        
+        int last = 0;
+        while(currStore < m){
+            int sold = min(amount,stores[i].second);
+            sellMoney += stores[currStore].first*sold;
+            amount -= sold;
+            if(amount == 0){
+                last = sold;
+                break;
+            }else{
+                currStore++;
+            }
+        }
+        if(rentIdx >= r || sellMoney > rent[rentIdx]){
+            MxMoney += sellMoney;
+            storeIdx = currStore;
+            if(storeIdx < m){ stores[storeIdx].second -= last;}
+            cowIdx++;
+        }else{
+            MxMoney += rent[rentIdx];
+            n--;
+            rentIdx++;
+        }
     }
+    cout << MxMoney << endl;
     return 0;
 }
