@@ -8,8 +8,8 @@ typedef long long ll;
 
 using namespace std; 
 
-int dirX[] = {-1, 0, 1, 0};
-int dirY[] = {0, 1, 0, -1};
+const int dirX[] = {-1, 0, 1, 0};
+const int dirY[] = {0, 1, 0, -1};
 
 int LOG2(int n){
     int ret = 0; 
