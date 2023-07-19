@@ -28,26 +28,31 @@ struct vid{
 };
 int n, q;
 vector<vid> input;
-vector<pair<int,int>> query;
+vector<pair<int,pair<int,int>>> query;
 
 bool cmp(vid &v1,vid &v2){
     return v1.rel < v2.rel;
 }
 
+bool cmp2(pair<int,pair<int,int>> &p1,pair<int,pair<int,int>> &p2){
+    return p1.second.first < p2.second.first;
+}
 void solve(){
-    sort(input.begin(),input.end(),cmp);
-    sort(query.begin(),query.end());
-
-    DSU d(n);
+    sort(input.begin(),input.end(),cmp); // sort based on relavance
+    sort(query.begin(),query.end(),cmp2); // sort based on k
+    DSU dsu(n);
+    vector<int> sol(q);
     int idx = 0;
-    for(auto q : query){
-        int k = q.first, v = q.second;
-        while(idx < input.size() && input[idx].rel < k){
-            d.unite(input[idx].a, input[idx].b);
+    for(auto q: query){
+        int v = q.second.second;
+        int currK = q.second.first;
+        while(idx < input.size() && input[idx].rel >= currK){
+            dsu.unite(input[idx].a, input[idx].b);
             idx++;
         }
-        cout << d.size(v)-1 << endl;
+        sol[q.first] = dsu.size(v)-1;
     }
+    for(auto x : sol ){cout << x << endl;}
 
 }
 
@@ -65,7 +70,8 @@ int main(){
     }
     for(int i = 0; i < q;i++){
         int k, v; cin >> k >> v;
-        query.push_back({k,v});
+        v--;
+        query.push_back({i,{k,v}});
     }
     solve();
     

@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-
+#define all(x) begin(x),end(x)
 using namespace std; 
 const int MAXN = 500;
 
@@ -24,95 +24,57 @@ struct DSU {
 	}
 };
 
-int n, half;
-int grid[MAXN][MAXN];
-bool visited[MAXN][MAXN];
-DSU dsu(1);
-int globalCost;
 
+struct Cell{
+    int i, j;
+};
 
-void CheckAdjacent(int i, int j){
-    if(i > 0){
-        if(abs(grid[i-1][j] - grid[i][j]) <= globalCost){
-            dsu.unite(i+j, i-1+j);
-        }
-    }
-    if(j > 0){
-        if(abs(grid[i][j-1] - grid[i][j]) <= globalCost){
-            dsu.unite(i+j, i+j-1);
-        }
-    }
-    if(i < n-1){ // can be n-1
-        if(abs(grid[i+1][j] - grid[i][j]) <= globalCost){
-            dsu.unite(i+j, i+1+j);
-        }
-    }
-    if(j < n-1){
-        if(abs(grid[i][j+1] - grid[i][j]) <= globalCost){
-            dsu.unite(i+j, i+j+1);
-        }
-    }
+struct Edge{
+    Cell to, from;
+    int cost;
+};
 
+int n;
+bool inBound(int x, int y){
+    return x >= 0 && x < n && y >= 0 && y < n;
 }
 
-void floodFill(int i, int j){
-    if(i < 0 || i >= n || j < 0 || j >= n) return;
-    if(visited[i][j]) return;
-
-    visited[i][j] = true;
-    CheckAdjacent(i,j);
-
-    floodFill(i+1,j);
-    floodFill(i,j+1);
-    floodFill(i-1,j);
-    floodFill(i,j-1);
-
+bool cmp(Edge &e1, Edge &e2){
+    return e1.cost < e2.cost;
 }
-
-
-bool works(int mid){
-    globalCost = mid;
-    dsu.reset(n);
-    floodFill(0,0);
-    for(int i = 0; i < n;i++){
-        for(int j = 0; j < n;j++){
-            if(dsu.size(i+j) >= half){
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("tractor.in","r",stdin);
     cin >> n;
-    half = ceil(n*n/2);
-    dsu.reset(n*n);
-    int lowest = INT32_MAX, highest = INT32_MIN;
+    const int half = (n*n+1)/2;
+    int grid[n][n];
     for(int i = 0; i < n;i++){
         for(int j = 0; j < n;j++){
             cin >> grid[i][j];
-            highest = max(highest,grid[i][j]);
-            lowest = min(lowest,grid[i][j]);
         }
     }
+    vector<Edge> edges;
 
-
-    int low = 0, high = highest-lowest +1, mid, ans;
-    while(low < high){
-        mid = low + (high-low)/2;
-        if(works(mid)){
-            ans = mid;
-            high = mid-1;
-        }else{
-            low = mid +1;
+    for(int i = 0; i < n;i++){
+        for(int j = 0; j < n;j++){
+            for(int k = 0; k < 4;k++){
+                Cell adj = {i+dirX[k],j+dirY[k]};
+                if(inBound(adj.i,adj.j) && grid[i][j] >= grid[adj.i][adj.j]){
+                    edges.push_back({adj, {i,j}, grid[i][j]-grid[adj.i][adj.j]});
+                }
+            }
         }
-
     }
-    cout << ans << endl;
+    DSU dsu(n*n);
+
+    sort(all(edges),cmp);
+    for(Edge e : edges){
+        dsu.unite(e.from.i*n + e.from.j, e.to.i*n + e.to.j);
+        if(dsu.size(e.from.i*n + e.from.j) == half || dsu.size(e.to.i*n + e.to.j) == half){
+            cout << e.cost << endl;
+            return 0;
+        }
+    }
     return 0;
 }
