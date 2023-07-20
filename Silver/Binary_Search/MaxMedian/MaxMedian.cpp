@@ -28,15 +28,38 @@ int main(){
     }
 
     auto works = [&](int median){
-        
+        vector<int> f(n);
+        for(int i = 0; i < n;i++){
+            if(a[i] >= median){
+                f[i] = 1;
+            }else{
+                f[i] = -1;
+            }
+            if(i > 0){
+                f[i] += f[i-1];
+            }
+        }
+        int MIN = 0;
+        int diff = 0;
+        for(int i = k - 1;i < n; i++){
+            MIN = min(MIN, f[i-k]);
+             diff = max(diff, f[i] - MIN);
+        }
+        return diff > 0;
     };
 
 
 
     int low = 1, high = n, ans  = -1;
     while(low <= high){
-        int mid = low + (high - low)/2;
-        
+        int mid = (low + high + 1)/2;
+        if(works(mid)){
+            low = mid + 1;
+            ans = mid;
+        }else{
+            high = mid - 1;
+        }
     }
+    cout << ans << endl;
     return 0;
 }
