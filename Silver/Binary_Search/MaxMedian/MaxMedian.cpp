@@ -21,5 +21,22 @@ int LOG2(int n){
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
+    int n, k; cin >> n >> k;
+    int a[n];
+    for(int i = 0; i < n;i++){
+        cin >> a[i];
+    }
+
+    auto works = [&](int median){
+        
+    };
+
+
+
+    int low = 1, high = n, ans  = -1;
+    while(low <= high){
+        int mid = low + (high - low)/2;
+        
+    }
     return 0;
 }

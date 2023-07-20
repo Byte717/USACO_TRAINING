@@ -22,6 +22,6 @@ int main(){
         Newstr = "";
         
     }
-
     return 0;
 }
+
