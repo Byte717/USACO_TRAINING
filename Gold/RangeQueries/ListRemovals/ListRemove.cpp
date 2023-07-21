@@ -27,5 +27,20 @@ int LOG2(int n){
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
+    int n; cin >> n;
+    vector<int> x(n);
+    Tree<int> set;
+    for(int i = 0; i < n;i++){
+        set.insert(i);
+        cin >> x[i];
+    }
+    for(int i = 0; i < n;i++){
+        int idx; cin >> idx;
+        idx--;
+        int pos = *(set.find_by_order(idx));
+        set.erase(pos);
+        cout << x[pos] << " ";
+    }
+    cout << endl;
     return 0;
 }
