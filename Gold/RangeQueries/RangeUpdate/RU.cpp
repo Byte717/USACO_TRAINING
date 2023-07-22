@@ -5,7 +5,6 @@
 typedef long long ll;
 
 using namespace std; 
-
 template <class T> class SumSegTree{
     private:
     const int DEFAULT = 0;
@@ -38,6 +37,7 @@ template <class T> class SumSegTree{
      }
 };
 
+
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("RU.in","r",stdin);
@@ -47,13 +47,25 @@ int main(){
         cin >> arr[i];
     }
     arr[0] = 0;
-    vector<ll> diff(n+1)
+    vector<ll> diff(n+1);
     for(int i = 1;i <= n;i++){
         diff[i] = arr[i]-arr[i-1];
     }
-    SumSegTree<ll> seg(n+1);
+    SumSegTree<ll> segtree(n+1);
     for(int i = 1; i <= n; i++){
-        seg.set
+        segtree.set(i, diff[i]);
+    }
+
+    while(q--){
+        int type; cin >> type;
+        if(type == 1){
+            int a, b, u; cin >> a >> b >> u;
+            segtree.set(a,u);
+            segtree.set(b+1,-u);
+        }else{
+            int k; cin >> k;
+            cout << segtree.query(1,k) << endl;
+        }
     }
     return 0;
 }
