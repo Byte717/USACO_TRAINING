@@ -27,5 +27,21 @@ int LOG2(int n){
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
+    ll n, m, q; cin >> n >> m >> q;
+
+    vector<pair<ll,int>> a(n);
+    for(int i = 0; i < n;i++){
+        cin >> a[i].first;
+        a[i].second = i;
+    }
+    sort(all(a));
+    vector<pair<ll,int>> queries(q);
+    for(int i = 0; i < n;i++){
+        cin >> queries[i].first;
+        queries[i].second = i;
+    }
+    vector<ll> ans(q);
+    sort(all(queries));
+    
     return 0;
 }
