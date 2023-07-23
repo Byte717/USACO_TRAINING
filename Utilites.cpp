@@ -45,5 +45,5 @@ template<class T> class utilites{
         unsigned long long distanceSquared(const T &x1, const T &y1, const T &x2, const T &y2){
             return (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2);
         }
-
+        
 };
