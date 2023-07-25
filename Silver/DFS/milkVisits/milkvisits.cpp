@@ -28,6 +28,7 @@ void dfs(int node, bool currentOK){
  
 int main(){
     freopen("milkvisits.in","r",stdin);
+    freopen("milkvisits.out","w",stdout);
     int n, m; cin >> n >> m;
     cin >> cows;
     graph.resize(n);

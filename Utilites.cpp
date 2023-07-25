@@ -12,10 +12,10 @@ template<class T> class utilites{
     int n;
     bool debug;
     int m;
-
+    const int dirX[] = {-1, 0, 1, 0};
+    const int dirY[] = {0, 1, 0, -1};
     public:
-        const int dirX[] = {-1, 0, 1, 0};
-        const int dirY[] = {0, 1, 0, -1};
+
 
         utilites(const int &n1, const bool &d, const int &m1= -1){
             n = n1;
@@ -31,8 +31,13 @@ template<class T> class utilites{
         
         bool InBounds(const T &x1, const T &y1){return x1 < n && x1 >= 0 && y1 >= 0 && y1 < m;}
 
-        void SetIo(const string &name = ""){
+
+        void fast(){
             cin.tie(0)->sync_with_stdio(0);
+        }
+
+        void SetIo(const string &name = "", bool fast = false){
+            if(fast){fast();}
             if(debug && name.size()){
                 freopen(name,"r",stdin);
             }
@@ -44,6 +49,17 @@ template<class T> class utilites{
 
         unsigned long long distanceSquared(const T &x1, const T &y1, const T &x2, const T &y2){
             return (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2);
+        }
+        int len(auto t){
+            return t.size();
+        }
+        vector<pair<int,int>> adjacent(int x, int y){
+            vector<pair<int,int>> ret;
+            for(int i = 0; i < 4;i++){
+                int newX = x+dirX[i], newY = y+dirY[i];
+                ret.push_back({newX,newY});
+            }
+            return ret;
         }
         
 };

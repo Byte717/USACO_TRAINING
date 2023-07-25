@@ -17,7 +17,7 @@ void dfs(int node){
 
 
 int main(){
-    freopen("input.in","r",stdin);
+    // freopen("input.in","r",stdin);
     int n; cin >> n;
     graph = vector<vector<int>>(n);
     visited = vector<bool>(n,false);
