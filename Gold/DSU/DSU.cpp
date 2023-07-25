@@ -24,14 +24,15 @@ struct DSU {
 
 
 struct dsu{
+	#define all(x) begin(x),end(x)
 	vector<int> parent, size;
-    dsu(int n){parent = vector<int>(n,-1);size = vector<int>(n,1);}
+    dsu(int n){parent = vector<int>(n);size = vector<int>(n,1);iota(all(parent),0);}
 
-	int get(int x){while(x != -1) x = parent[x]; return x;}
+	int get(int x){while(x != parent[x]) x = parent[x]; return x;}
 
 	bool same_set(int a, int b){return get(a) == get(b);}
 
-	int size(int x){return size[x];}
+	int sz(int x){return size[x];}
 
 	bool link(int a, int b){
 		a = get(a), b = get(b);
@@ -39,6 +40,7 @@ struct dsu{
 		if(size[a] < size[b]) swap(a,b);
 		size[a] += size[b];
 		parent[b] = a;
+		return true;
 	}
 
 };
