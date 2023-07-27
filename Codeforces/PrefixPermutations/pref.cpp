@@ -7,30 +7,81 @@
 typedef long long ll;
 
 using namespace std;
+int n; 
+bool isPermutation(vector<ll> arr){
+    for(int i = 0; i < n;i++){
+        if(arr[i] <= 0 || arr[i] > n){
+            return false;
+        }
+    }
+    return true;
+}
 
-int LOG2(int n){
-    int ret = 0; 
-    while((1<<(ret+1)) <= n){ret++;}
+vector<ll> prefToArr(vector<ll> &pref){
+    vector<ll> ret(n);
+    ret[0] = pref[0];
+    for(int i = 1; i < n;i++){
+        ret[i] = pref[i] - pref[i-1];
+    }
     return ret;
 }
+
+
 void solve(){
-    int n; cin >> n;
+    cin >> n;
     vector<ll> pref(n-1);
     for(int i = 0; i < n-1;i++){
         cin >> pref[i];
     }
-    vector<ll> arr;
+    ll x = n*(n+1)/2;
+    if(pref.back() != x){
+        pref.push_back(x);
+        vector<ll> arr = prefToArr(pref);
+        if(isPermutation(arr)){
+            cout << "YES" << endl;
+        }else{
+            cout << "NO" << endl;
+        }
+        return;
+    }
+    map<ll,ll> m;
+    m[pref[0]]++;
     for(int i = 1; i < n-1;i++){
-        arr.push_back(pref[i]-pref[i-1]);
+        m[pref[i]-pref[i-1]]++;
     }
-    for(int i = 0; i < arr.size();i++){
-        
+    vector<int> cntCt1;
+    for(auto i : m){
+        if(i.second > 1){
+            cntCt1.push_back(i.first);
+        }
     }
+    if(cntCt1.size() > 1){
+        cout << "NO" << endl;
+        return;
+    }
+    if(cntCt1.size() == 1){
+        ll x1 = cntCt1[0];
+        if(m[x1] > 2){
+            cout << "NO" << endl;
+            return;
+        }
+    }
+    vector<int> cnt0;
+    for(int i = 1; i <=n;i++){
+        if(m[i] == 0){
+            cnt0.push_back(i);
+        }
+    }
+    if(cnt0.size() != 2){
+        cout << "NO" << endl;
+        return;
+    }
+    cout << "YES" << endl;
 }
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("pref.in","r",stdin);
+    // freopen("pref.in","r",stdin);
     int t; cin >> t;
     while(t--){solve();}
     return 0;
