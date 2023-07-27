@@ -11,7 +11,7 @@ struct DSU {
 
 	int size(int x) { return -e[get(x)]; } // size of set
 
-	bool unite(int x, int y) { // put into same group
+	bool link(int x, int y) { // put into same group
 		x = get(x), y = get(y);
 		if (x == y) return false;
 		if (e[x] > e[y]) swap(x, y);

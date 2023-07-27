@@ -8,13 +8,18 @@ typedef long long ll;
 
 using namespace std;
 
+int LOG2(int n){
+    int ret = 0; 
+    while((1<<(ret+1)) <= n){ret++;}
+    return ret;
+}
+
 
 void solve(){
-    int n; cin >> n;
-    ll k; cin >> k;
-    vector<ll> octopus(n);
-    for(int i = 0; i < n;i++){
-        cin >> octopus[i];
+    int n; ll k; cin >> n >> k;
+    int ans = 0;
+    for(int i = 1; i <= n;i++){
+                 
     }
     
 }

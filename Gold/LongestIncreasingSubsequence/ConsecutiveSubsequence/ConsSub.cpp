@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #define INF 1e18
 #define MOD 1e9+7
-
+#define all(x) begin(x),end(x)
 typedef long long ll;
 
 using namespace std; 
@@ -13,25 +13,30 @@ int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("ConsSub.in","r",stdin);
     int n; cin >> n;
-    int arr[n];
-    for(int i = 0; i < n;i++){
-        cin >> arr[i];
+    vector<int> a(n);
+    for(int i = 0; i < n; i++){
+        cin >> a[i];
     }
-    vector<int> lis;
-    vector<int> idx;
-    for(int i = 0; i < n;i++){
-        int pos = lower_bound(lis.begin(),lis.end(),arr[i]) - lis.begin();
-        if(pos == lis.size()){
-            lis.push_back(arr[i]);
-            idx.push_back(i);
-        }else{
-            lis[pos] = arr[i];
-            idx[pos] = i;
+    map<int,int> dp;
+    int ans = 0, lst = 0;
+    for(int i = 0; i < n; i++){
+        dp[a[i]] = dp[a[i]-1] + 1;
+        if(ans < dp[a[i]]){
+            ans = dp[a[i]];
+            lst = a[i];
         }
     }
-    cout << lis.size() << endl;
-    for(int i = 0; i < idx.size();i++){
-        cout << idx[i] << " ";
+    vector<int> res;
+    for(int i = n-1; i >= 0; i--){
+        if(a[i] == lst){
+            res.push_back(i);
+            lst--;
+        }
+    }
+    reverse(all(res));
+    cout << ans << endl;
+    for(int i = 0; i < res.size(); i++){
+        cout << res[i] << ' ';
     }
     cout << endl;
     return 0;
