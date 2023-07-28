@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #define INF 1e18
-#define MOD 1e9+7
+#define MOD 998244353
 #define all(x) begin(x),end(x)
 #define rall(x) x.rbegin(), x.rend()
 
@@ -16,10 +16,22 @@ int LOG2(int n){
     while((1<<(ret+1)) <= n){ret++;}
     return ret;
 }
+int factorial(int n){
+    int ret = 1;
+    for(int i = 2; i <= n; i++){
+        ret *= i;
+    }
+    return ret;
+}
+
 
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
+    int n; cin >> n;
+    ll ans = factorial(n);
+    
+
     return 0;
 }
