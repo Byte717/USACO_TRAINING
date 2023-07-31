@@ -24,15 +24,27 @@ int main(){
 
 
     auto worksBetter = [&](ll x){
-        
-
-
+        ll given = 0;
+        ll daysLeft = k;
+        ll minAmount = m;
+        while(daysLeft > 0 && g < n){
+            ll y = (n-given)/x;
+            if(y < m){
+                ll leftOver = ((n-given) + (m-1))/m;
+                return leftOver <= daysLeft;
+            }
+            ll maxMatch = n - (x*y);
+            ll numDays = min(daysLeft, (maxMatch-g)/y+1);
+            given += y*numDays;
+            daysLeft -= numDays;
+        }
+        return given >= n;
     };
 
     ll low = 1, hi = 1e12, mid, ans;
     while(low <= hi){
         mid = low + (hi - low)/2;
-        if(works(mid)){
+        if(worksBetter(mid)){
             low = mid+1;
             ans = mid;
         }else{
