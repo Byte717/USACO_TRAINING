@@ -17,9 +17,23 @@ public:
     }
 };
 
+void fasterLis(int n, vector<ll> a){
+    vector<int> dp;
+    for(int i = 0; i < n;i++){
+        int pos = lower_bound(all(dp), a[i]) - dp.begin();
+        if(pos == dp.size()){
+            dp.push_back(a[i]);
+        }else{
+            dp[pos] = a[i];
+        }
+    }
+    cout << dp.size() << endl;
+}
+
+
 int main(){
     Solution obj1;
-    vector<int> arr = {0,1,0,3,2,3};
+    vector<int> arr = {7, 3, 5, 3, 6, 2, 9, 8};
     cout << obj1.lengthOfLIS(arr) << endl;
 
 }
