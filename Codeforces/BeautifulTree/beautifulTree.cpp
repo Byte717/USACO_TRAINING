@@ -8,25 +8,44 @@ typedef long long ll;
 
 using namespace std;
 
-const int dirX[] = {-1, 0, 1, 0};
-const int dirY[] = {0, 1, 0, -1};
 
-int LOG2(int n){
-    int ret = 0; 
-    while((1<<(ret+1)) <= n){ret++;}
-    return ret;
+int n, m;
+vector<int> arr;
+int operationsNeeded(int left, int right){
+    if(right - left == 1) return 0;
+    int mid = (left+right) >> 1;
+    int MXLeft = *max_element(arr.begin() + left, arr.begin() + mid);
+    int MXRight = *max_element(arr.begin() + mid, arr.begin() + right);
+    int ans = 0;
+    if(MXLeft > MXRight){
+        ans++;
+        for(int i = 0; i < (mid-left);i++){
+            swap(arr[left+i], arr[mid+i]);
+        }
+    }
+    return ans + operationsNeeded(left,mid) + operationsNeeded(mid,right);
 }
 
 void solve(){
-    
+    int ans = operationsNeeded(0,m);
+    if(is_sorted(all(arr))){
+        cout << ans << endl;
+    }else{
+        cout << -1 << endl;
+    }
 }
 
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("","r",stdin);
+    // freopen("tree.in","r",stdin);
     int t; cin >> t;
     while(t--){
+        cin >> m;
+        arr.resize(m);
+        for(int i = 0; i < m;i++){
+            cin >> arr[i];
+        }
         solve();
     }
     return 0;
