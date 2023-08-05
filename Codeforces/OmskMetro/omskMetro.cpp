@@ -33,18 +33,22 @@ void solve(){
     info start;
     start.maxSuf = start.maxAns = 1;
     vector<info> st;
+    st.push_back(start);
     for(int i = 0; i < n;i++){
         char type; cin >> type;
         if(type == '+'){
             int v, x; cin >> v >> x;
+            v--;
             info pref = st[v];
             info curr;
             curr.minSuf = min(0, pref.minSuf + x);
             curr.maxSuf = max(0,pref.maxSuf+x);
             curr.minAns = min(pref.minAns,curr.minSuf);
             curr.maxAns = max(pref.maxAns, curr.maxSuf);
+            st.push_back(curr);
         }else{
-            int v, x; cin >> v >> x;
+            int garbage,v, x; cin >> garbage >> v >> x;
+            v--;
             if(st[v].minAns <= x && x <= st[v].maxAns){
                 cout << "YES" << endl;
             }else{
@@ -56,7 +60,7 @@ void solve(){
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("","r",stdin);
+    // freopen("omsk.in","r",stdin);
     int t; cin >> t;
     while(t--){
         solve();
