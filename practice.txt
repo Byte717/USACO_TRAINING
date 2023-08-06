@@ -1,0 +1,21 @@
+1.Concept
+- Know your Topic
+
+
+2.Framework
+- Ask questions on what might be able to solve this problem
+- Try different things and don't get stuck on one idea
+
+3.Form
+-After you identify the topic, each topic can be broken into solving a couple different types of problems
+- Find those "Forms" decide which one to use
+
+
+4. Tactic
+- Important ideas you need to know to solve a problem with a certain form and framework
+- Important optimizations with implementation
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
