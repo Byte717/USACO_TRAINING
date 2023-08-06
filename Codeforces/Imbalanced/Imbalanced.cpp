@@ -17,9 +17,23 @@ int LOG2(int n){
     return ret;
 }
 
+void solve(){
+    int n; cin >> n;
+    vector<int> a(n);
+    for(int i = 0; i < n;i++){
+        cin >> a[i];
+    }
+    
+
+}
+
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
+    int t; cin >> t;
+    while(t--){
+        solve();
+    }
     return 0;
 }
