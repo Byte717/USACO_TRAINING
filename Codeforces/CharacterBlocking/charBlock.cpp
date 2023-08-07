@@ -8,6 +8,22 @@ typedef long long ll;
 
 using namespace std;
 
+/*
+solution, count the number of positions that do not match. 
+during updates, use a queue to keep track of what is covered.
+the strings are equal if at any momment the bad count is 0
+
+What I learned charBlock: 
+-string hashing
+-Queues can be used for queries that last for a time
+
+Alternate solution:
+Hash the string, and for 3 queries the answer is the hash - the hash of the ignored chars
+
+
+
+*/
+
 void solve(){
     string s1, s2;
     cin >> s1 >> s2;
@@ -19,8 +35,28 @@ void solve(){
         }
     }
     int t, q; cin >> t >> q;
-    queue<pair<int,int>> unblock;
-    while(q--)
+    queue<pair<int,int>> blocked;
+    for(int i = 0; i < q;i++){
+        while(!blocked.empty() && blocked.front().first == i){
+            if(s1[blocked.front().second] != s2[blocked.front().second]){
+                bad++;
+            }
+            blocked.pop();
+        }
+        int type; cin >> type;
+        if(type == 1){
+            int pos; cin >> pos;
+            pos--;
+            if(s1[pos] != s2[pos]){
+                bad--;
+            }
+            blocked.emplace(i+t, pos);
+        }else if(type == 2){
+            int num1, pos1, num2, 
+        }else{
+            cout << (!bad ? "YES":"NO") << endl;
+        }
+    }
 }
 
 

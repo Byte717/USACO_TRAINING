@@ -31,3 +31,6 @@ What I learned: TenzingBalls
 - instead of dp[i][j], you can break it into 2 separate arrays to speed up the time
 - you can use inverse counting, dont count the answer, count n-ans
 
+What I learned charBlock: 
+-string hashing
+-Queues can be used for queries that last for a time
