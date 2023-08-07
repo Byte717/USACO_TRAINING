@@ -19,3 +19,9 @@
 
 
 WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
+
+
+What I learned? Vampiric Powers 
+- boolean arrays can be used to speed up the solution (tactic)
+- Concept: Xor ranges
+    - Intersections of ranges cancel out
