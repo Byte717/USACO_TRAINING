@@ -4,7 +4,7 @@
 #define all(x) begin(x),end(x)
 #define rall(x) x.rbegin(), x.rend()
 
-typedef long long ll;
+typedef unsigned long long ll;
 
 using namespace std;
 
@@ -19,7 +19,7 @@ then the answer is the number of things on the same line *( that num - 1)
 
 void solve(){
     int n; cin >> n;
-    map<int,int> NS, EW, NESW, NWSE;
+    map<ll,ll> NS, EW, NESW, NWSE;
     for(int i = 0; i < n;i++){
         int x, y; cin >> x >> y;
         NS[x]++;
@@ -27,7 +27,7 @@ void solve(){
         NESW[x-y]++;
         NWSE[x+y]++;
     }
-    int ans = 0;
+    ll ans = 0;
     for(auto &[x,y] : NS){
         ans+=y*(y-1);
     }
@@ -46,7 +46,7 @@ void solve(){
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("morn.in","r",stdin);
+    // freopen("morn.in","r",stdin);
     int t; cin >> t;
     while(t--){
         solve();
