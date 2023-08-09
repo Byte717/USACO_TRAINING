@@ -50,3 +50,6 @@ What i learned Array Painting:
 
 What I learned Bracket Coloring:
 - Greedy involves grouping your input
+
+WHat I learned Freedom:
+    - For divisibility problems, check the divisors of the number
