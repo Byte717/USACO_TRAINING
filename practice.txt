@@ -34,3 +34,11 @@ What I learned: TenzingBalls
 What I learned charBlock: 
 -string hashing
 -Queues can be used for queries that last for a time
+
+
+WHat I Learned Flipper:
+- Put bigger values first to maximize lexographical order
+
+What I learned Contrast Value:
+-For minimizing, considering greedily what can be removed
+-Use a condition, like in dp
