@@ -46,3 +46,7 @@ What I learned Contrast Value:
 What i learned Array Painting:
 - when counting a solution, think of how you can earn just 1 of something
 - like in this problem, how can you use 1 coin to maximize numbers painted
+- Segment the input into different pieces
+
+What I learned Bracket Coloring:
+- Greedy involves grouping your input
