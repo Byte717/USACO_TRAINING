@@ -57,3 +57,7 @@ WHat I learned Freedom:
 What I learned Drawing Trees:
 - find how to optimize problems with using base cases for what is visited
 - like id represents 0 if the node was not added
+
+
+WHat I learned Fibonacharsis:
+- Try looking at solving brute force in reverse for a faster solution
