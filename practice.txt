@@ -53,3 +53,7 @@ What I learned Bracket Coloring:
 
 WHat I learned Freedom:
     - For divisibility problems, check the divisors of the number
+
+What I learned Drawing Trees:
+- find how to optimize problems with using base cases for what is visited
+- like id represents 0 if the node was not added

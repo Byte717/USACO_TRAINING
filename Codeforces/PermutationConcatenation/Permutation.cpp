@@ -8,18 +8,15 @@ typedef long long ll;
 
 using namespace std;
 
-const int dirX[] = {-1, 0, 1, 0};
-const int dirY[] = {0, 1, 0, -1};
+int FACT[(int)1e6];
 
-int LOG2(int n){
-    int ret = 0; 
-    while((1<<(ret+1)) <= n){ret++;}
-    return ret;
-}
 int factorial(int n){
+    FACT[0] = 1;
+    FACT[1] = 1;
     int ret = 1;
     for(int i = 2; i <= n; i++){
         ret *= i;
+        FACT[i] = ret;
     }
     return ret;
 }
