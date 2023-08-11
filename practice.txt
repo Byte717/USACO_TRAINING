@@ -62,6 +62,8 @@ What I learned Drawing Trees:
 WHat I learned Fibonacharsis:
 - Try looking at solving brute force in reverse for a faster solution\
 
-
 WHat I learned Phase Shift:
     - Lexographic implies greedy to take the smallest or largest character possible.
+    
+what I learned White Black Subtrees:
+    - tree dp can be used to count solutions for subtrees.
