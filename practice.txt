@@ -67,3 +67,7 @@ WHat I learned Phase Shift:
     
 what I learned White Black Subtrees:
     - tree dp can be used to count solutions for subtrees.
+    
+WHat I learned Selfie:
+- Binary search can be used to find values for queries.
+- Difference EQUATION can be used to find if 2 equations intersect.
