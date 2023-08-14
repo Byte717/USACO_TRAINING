@@ -74,3 +74,8 @@ WHat I learned Selfie:
 
 WHat I learned Interview:
     - Binary search can be used to search an interval
+
+    
+What I learned living sequence:
+    - When dealing with number theory, break it into digits and look at them individually
+    - base conversion is basically modding the number and dividing repeatedly.
