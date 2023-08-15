@@ -16,7 +16,11 @@ int LOG2(int n){
     while((1<<(ret+1)) <= n){ret++;}
     return ret;
 }
-
+int LOG2(int n1){
+    int ret = 0; 
+    while((1<<(ret)) <= n+1){ret++;}
+    return ret;
+}
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);

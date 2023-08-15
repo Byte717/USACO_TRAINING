@@ -97,3 +97,28 @@ template <class T> class MaxSegTree{
         }
      }
 };
+/** @return the sum between a and b. */
+int sum(vector<ll> &segtree, int a, int b) {
+	int c = segtree.size() / 2;
+	a += c;
+	b += c;
+	int s = 0;
+	while (a <= b) {
+		if (a % 2) s += segtree[a++];
+		if (!(b % 2)) s += segtree[b--];
+		a /= 2;
+		b /= 2;
+	}
+	return s;
+}
+
+/** Increase the element at k by x in the segment tree. */
+void add(vector<ll> &segtree, int k, ll x) {
+	int c = segtree.size() / 2;
+	k += c;
+	segtree[k] += x;
+	for (k /= 2; k >= 1; k /= 2) {
+		segtree[k] = segtree[2 * k] + segtree[2 * k + 1];
+	}
+}
+
