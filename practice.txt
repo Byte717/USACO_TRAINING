@@ -15,6 +15,8 @@
 - Important ideas you need to know to solve a problem with a certain form and framework
 - Important optimizations with implementation
 
+
+-go back to past problems, 
 ---------------------------------------------------------------------------------------------------------------------
 
 
@@ -79,3 +81,7 @@ WHat I learned Interview:
 What I learned living sequence:
     - When dealing with number theory, break it into digits and look at them individually
     - base conversion is basically modding the number and dividing repeatedly.
+
+What I learned Pull Luck:
+    - the sum of numbers from 1 to 2*n is divisible by n; after that, the remainders repeat.
+    - so check divisibility from 1 to 2*n
