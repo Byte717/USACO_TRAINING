@@ -85,3 +85,7 @@ What I learned living sequence:
 What I learned Pull Luck:
     - the sum of numbers from 1 to 2*n is divisible by n; after that, the remainders repeat.
     - so check divisibility from 1 to 2*n
+
+What I learned Redistributing gifts:
+- kosaraju's algorithm
+- SCCs can be used to solve graph problems.

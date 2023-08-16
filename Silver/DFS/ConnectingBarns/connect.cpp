@@ -13,19 +13,19 @@ ll cost(int a, int b){
     ll dist = 1e18; 
     for(auto x : components[a]){
         int index = lower_bound(components[b].begin(),components[b].end(), x) - components[b].begin();
-        if(index > 0) dist = min((int)dist, abs(components[b][index-1]));
-        if(index < components[b].size()) dist = min((int)dist, abs(components[b][index]));
+        if(index > 0) dist = min((int)dist, abs(components[b][index-1] - x));
+        if(index < components[b].size()) dist = min((int)dist, abs(components[b][index] - x));
     }
     return dist*dist;
 }
 
-ll cost2(int a, int b){
-    ll dist = 1e5;
-    for(int x : components[a]){
-        int closest = lower_bound(components[b].begin(), components[b].end(0), x) - components[b].begin();
+// ll cost2(int a, int b){
+//     ll dist = 1e5;
+//     for(int x : components[a]){
+//         int closest = lower_bound(components[b].begin(), components[b].end(0), x) - components[b].begin();
         
-    }
-}
+//     }
+// }
 
 
 void dfs(int node, int grp){
@@ -61,16 +61,16 @@ void solve(){
         cout << 0 << endl;
         return;
     }
-    ll ret = cost(group[0], group[n-1]);
+    ll ret = cost(0, n-1);
     for(int i = 1; i < currentGroup;i++){
-        ret = min(ret, cost(i,group[0]) + cost(i, group[n-1]));
+        ret = min(ret, cost(i,0) + cost(i, n-1));
     }
     cout << ret << endl;
     return;
 }
 
 int main(){
-    // freopen("connect.in","r",stdin);
+    freopen("connect.in","r",stdin);
     int t; cin >> t; 
     while(t--){
         solve();

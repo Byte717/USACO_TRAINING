@@ -34,7 +34,7 @@ void solve(){
     for(int i = 0; i < n;i++){
         cin >> a[i];
     }
-    vector<int> dp(n+1), buc(n+1, 1e6); // buc[a[i]] stores the last index where a[i] == a[j]
+    vector<int> dp(n+1), buc(n+1, 1e6); // buc[a[i]] stores the dp[j-1] of the last index where a[i] == a[j]
     dp[0] = 0;
     for(int i = 1;i <= n;i++){
         dp[i] = min(dp[i-1]+1, buc[a[i-1]]);
