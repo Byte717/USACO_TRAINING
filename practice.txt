@@ -89,3 +89,6 @@ What I learned Pull Luck:
 What I learned Redistributing gifts:
 - kosaraju's algorithm
 - SCCs can be used to solve graph problems.
+
+what I learned Cow at large:
+    - you can start bfs from multiple places

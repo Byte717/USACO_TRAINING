@@ -14,7 +14,8 @@ const int dirY[] = {0, 1, 0, -1};
 initial thoughts, all points can be connected in a graph if they are on the same vertical or horizontal plane
 these can be found using the sweep line algorithm twice. But to make those edges, it becomes O(n^2) really fast.
 
-
+solution: sweepline wasnt needed. Instead, store those vertical and horizontal edges for a certian x or y 
+in a map that contains the coordinate and all of indexes of mirrors on it. then its a bfs that we look at considering the direction.
 
 */
 
