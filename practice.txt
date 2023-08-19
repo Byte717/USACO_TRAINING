@@ -95,3 +95,7 @@ what I learned Cow at large:
 
 what I learned Fenced in Gold:(revisit)
     - try to make grid problems into graph problems
+    
+what I learned Berry Picking:
+    - Think of setting upper bounds to minimize values 
+
