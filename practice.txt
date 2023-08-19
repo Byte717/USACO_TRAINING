@@ -92,3 +92,6 @@ What I learned Redistributing gifts:
 
 what I learned Cow at large:
     - you can start bfs from multiple places
+
+what I learned Fenced in Gold:(revisit)
+    - try to make grid problems into graph problems

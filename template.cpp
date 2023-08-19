@@ -11,6 +11,11 @@ using namespace std;
 const int dirX[] = {-1, 0, 1, 0};
 const int dirY[] = {0, 1, 0, -1};
 
+int LOG2(int n){
+    int ret = 0; 
+    while((1<<(ret+1)) <= n){ret++;}
+    return ret;
+}
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);

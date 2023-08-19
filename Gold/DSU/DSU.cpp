@@ -23,10 +23,10 @@ struct DSU {
 
 
 
-struct dsu{
+struct DSU{
 	#define all(x) begin(x),end(x)
 	vector<int> parent, size;
-    dsu(int n){parent = vector<int>(n);size = vector<int>(n,1);iota(all(parent),0);}
+    DSU(int n){parent = vector<int>(n);size = vector<int>(n,1);iota(all(parent),0);}
 
 	int get(int x){while(x != parent[x]) x = parent[x]; return x;}
 
