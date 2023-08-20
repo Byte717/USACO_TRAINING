@@ -97,5 +97,7 @@ what I learned Fenced in Gold:(revisit)
     - try to make grid problems into graph problems
     
 what I learned Berry Picking:
-    - Think of setting upper bounds to minimize values 
+    - Think of setting upper bounds to minimize values in greedy
 
+What I learned: 
+    - in Greedy, think of approaches and take the best one!
