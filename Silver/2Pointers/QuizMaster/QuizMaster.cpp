@@ -12,7 +12,11 @@ using namespace std;
 solution: 
 use 2 pointers to see if the students between those pointer are collectively smart. We precompute the factors of each number
 then we go through factors of the first student and keep a frequency array. while we still have all the topics, move the second pointer forward
-keep updating 
+keep updating the factors
+
+What I learned QuizMaster:
+    - in 2 pointer approach, keep moving the second pointer forward while you still can greedily
+    - in number theory, store ther factors.
 */
 
 
