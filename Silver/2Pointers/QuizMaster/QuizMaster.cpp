@@ -8,6 +8,14 @@ typedef long long ll;
 
 using namespace std;
 
+/*
+solution: 
+use 2 pointers to see if the students between those pointer are collectively smart. We precompute the factors of each number
+then we go through factors of the first student and keep a frequency array. while we still have all the topics, move the second pointer forward
+keep updating 
+*/
+
+
 const ll MAXM = 1e5;
 vector<ll> factors[MAXM+5];
 
@@ -36,11 +44,11 @@ void solve(){
             if(x > m){
                 break;
             }
-            if(!freq[x]){
+            if(!freq[x]++){
                 currCount++;
             }
         }
-        while(currCount == m){
+        while(currCount == m ){
             ll currAns = a[i].first - a[j].first;
             if(currAns < globalAns){
                 globalAns = currAns;
