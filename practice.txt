@@ -101,7 +101,12 @@ what I learned Berry Picking:
 
 What I learned: 
     - in Greedy, think of approaches and take the best one!
-    
+
 What I learned QuizMaster:
     - in 2 pointer approach, keep moving the second pointer forward while you still can greedily
     - in number theory, store ther factors.
+
+What I learned Lucky Sum:
+    - in number theory, thoink of how you can store and construct the numbers with limitations
+    - whenever something repeats, think of what interval it repeats on
+    - use lower bound to speed up queries.
