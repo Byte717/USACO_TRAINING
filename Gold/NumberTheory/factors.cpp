@@ -23,3 +23,13 @@ vector<ll> findFactors(int n){ // root(n)
     }
     return ret;
 }
+
+vector<bool> prime((int)1e6+5,true);
+void Sieve(){
+    for(int x = 2; x <= 1e6+2;x++){
+        if(!prime[x]) continue;
+        for(int i = 2*x; i <= 1e6;i+=x){
+            prime[i] = false;
+        }
+    }
+}
