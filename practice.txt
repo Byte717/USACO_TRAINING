@@ -110,6 +110,9 @@ What I learned Lucky Sum:
     - in number theory, thoink of how you can store and construct the numbers with limitations
     - whenever something repeats, think of what interval it repeats on
     - use lower bound to speed up queries.
-    
+
 What I learned T-primes:
     - use the Sieve to find prime numbers for number theory
+    
+WHat I learned Xenia Divisors:
+    - when constructing a solution, keep a track of what you have in a frequency array.
