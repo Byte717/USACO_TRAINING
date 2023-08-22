@@ -116,7 +116,10 @@ What I learned T-primes:
 
 WHat I learned Xenia Divisors:
     - when constructing a solution, keep a track of what you have in a frequency array.
-    
+
 WHat I learned Chosing teams: 
     - just keep a count of what works individually and calculate from there in greedy
     - like the answer would be individual/3
+    
+What I learned Road Construction:
+    - Star graphs, graphs that have a center
