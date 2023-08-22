@@ -120,6 +120,10 @@ WHat I learned Xenia Divisors:
 WHat I learned Chosing teams: 
     - just keep a count of what works individually and calculate from there in greedy
     - like the answer would be individual/3
-    
+
 What I learned Road Construction:
     - Star graphs, graphs that have a center
+
+What I learned Tea tasting:
+    - binary search can be used to speed up a solution that requires a second pointer
+    - delta encoding, using cnt[i] as a prefix technique to count how many times the ith element has an operation done
