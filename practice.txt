@@ -127,3 +127,8 @@ What I learned Road Construction:
 What I learned Tea tasting:
     - binary search can be used to speed up a solution that requires a second pointer
     - delta encoding, using cnt[i] as a prefix technique to count how many times the ith element has an operation done
+    
+What I learned Range update Point query:
+    - binary search on sets using lower and upper bound
+    - using sets to store active things that need to be editied.
+        - like from l to r, only certain things need to be edited. 
