@@ -132,3 +132,6 @@ What I learned Range update Point query:
     - binary search on sets using lower and upper bound
     - using sets to store active things that need to be editied.
         - like from l to r, only certain things need to be edited. 
+
+what I learned routine Problem: revisit!
+    - euclid's algorithm to find gcd
