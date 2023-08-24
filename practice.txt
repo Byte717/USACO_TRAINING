@@ -138,3 +138,6 @@ what I learned routine Problem: revisit!
 
 What I learned Sequences:
     - for number theory, write the pattern out brute force to see a pattern to speed up with
+
+What I learned Dima line:
+    -draw the base case out!!!!
