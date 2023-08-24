@@ -135,3 +135,6 @@ What I learned Range update Point query:
 
 what I learned routine Problem: revisit!
     - euclid's algorithm to find gcd
+
+What I learned Sequences:
+    - for number theory, write the pattern out brute force to see a pattern to speed up with
