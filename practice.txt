@@ -167,3 +167,6 @@ What I learned Ciel flowers:
 
 What I learned Max Absurdity: revisit *****
     - prefix sums can be used twice
+
+    What I learned Boredom: Revisit *****
+    - dp can be used to find optimal solution and count the number of solutions.
