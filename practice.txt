@@ -141,3 +141,7 @@ What I learned Sequences:
 
 What I learned Dima line:
     -draw the base case out!!!!
+    
+What I learned Ciel flowers:
+    - try to think of multiple greedy approaches and take the optimal one
+    - think of a mathematical solution (like formulas) to speed things up

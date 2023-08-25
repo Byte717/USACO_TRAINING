@@ -13,7 +13,7 @@ const ll MOD = 1e9+7;
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("coach.in","r",stdin);
+    // freopen("coach.in","r",stdin);
     int n, m; cin >> n >> m;
     if(m == 0){
         for(int i = 0; i < n/3;i++){
@@ -61,7 +61,7 @@ int main(){
     }
     for(int i = 0; i < allGroups.size();i++){
         for(int j = 0; j < allGroups[i].size();j++){
-            cout << allGroups[i][j] << ' ';
+            cout << allGroups[i][j] + 1 << ' ';
         }
         cout << endl;
     }
@@ -79,9 +79,9 @@ int main(){
     }
     int lastOne = 0;
     for(int i = 0; i < twos.size();i++){
-        cout << twos[i][0] << ' ';
-        cout << twos[i][1] << ' ';
-        cout << ones[i][0] << endl;
+        cout << twos[i][0]+1 << ' ';
+        cout << twos[i][1]+1 << ' ';
+        cout << ones[i][0]+1 << endl;
     }
     int printed = 0;
     for(int i = lastOne; i < ones.size();i++){
@@ -89,7 +89,7 @@ int main(){
             printed = 0;
             cout << endl;
         }
-        cout << ones[i][0] << ' ';
+        cout << ones[i][0]+1 << ' ';
     }
     return 0;
 }
