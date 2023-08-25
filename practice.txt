@@ -19,7 +19,26 @@
 -go back to past problems, 
 ---------------------------------------------------------------------------------------------------------------------
 
-
+To Do List:
+    - K Tree (Codeforces DP)
+    - Project (DP)
+    - Trainees (Codeforces Number theory)
+    - Permutree (Codeforces)
+    - irrigation (Range queries)
+    - Best stock timne 3 (leetcode)
+    - In a Mountain( Codeforces)
+    - reversing game (Codeforces)
+    - Number Game( DP)
+    - Haircut (range queries)
+    - Black cells(Codeforces)
+    - Permutation COncatination (Codeforces)
+    - Flipper (Codeforces)
+    - Set Construction( Codeforces)
+    - character block (Codeforces)
+    - Imbalanced Arrays(Codeforces)
+    - matchStick (Codeforces)
+    - controllers(Codeforces)
+--------------------------------------------------------------------------------------------------------------------
 WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
 
 
@@ -133,7 +152,7 @@ What I learned Range update Point query:
     - using sets to store active things that need to be editied.
         - like from l to r, only certain things need to be edited. 
 
-what I learned routine Problem: revisit!
+what I learned routine Problem: revisit********
     - euclid's algorithm to find gcd
 
 What I learned Sequences:
@@ -141,7 +160,10 @@ What I learned Sequences:
 
 What I learned Dima line:
     -draw the base case out!!!!
-    
+
 What I learned Ciel flowers:
     - try to think of multiple greedy approaches and take the optimal one
     - think of a mathematical solution (like formulas) to speed things up
+
+What I learned Max Absurdity: revisit *****
+    - prefix sums can be used twice
