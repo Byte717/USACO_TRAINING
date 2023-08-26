@@ -168,5 +168,8 @@ What I learned Ciel flowers:
 What I learned Max Absurdity: revisit *****
     - prefix sums can be used twice
 
-    What I learned Boredom: Revisit *****
+What I learned Boredom: Revisit *****
     - dp can be used to find optimal solution and count the number of solutions.
+
+what I learned Dima Equation:
+    - sum of digits is very small, so iterate through that for number thoery to speed it up
