@@ -173,3 +173,6 @@ What I learned Boredom: Revisit *****
 
 what I learned Dima Equation:
     - sum of digits is very small, so iterate through that for number thoery to speed it up
+    
+what I learned tetrahedron:
+    - DP: if memory is a problem, just keep the parts you need, dp[i-1]. then on the i'th iteration, calculate dp[i] and set dp[i-1] to dp[i] and repeat
