@@ -176,6 +176,9 @@ what I learned Dima Equation:
 
 what I learned tetrahedron:
     - DP: if memory is a problem, just keep the parts you need, dp[i-1]. then on the i'th iteration, calculate dp[i] and set dp[i-1] to dp[i] and repeat
-    
+
 what I learned Xor and OR:
     - think of the base cases. not everything has to be a complex algorithm
+    
+What I learned Desorting:
+    - notice pattern in answer. it will be a common technique with a formula
