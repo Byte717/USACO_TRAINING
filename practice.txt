@@ -183,3 +183,7 @@ what I learned Xor and OR:
     
 What I learned Desorting:
     - notice pattern in answer. it will be a common technique with a formula
+
+what I learned sumProduct:
+    - think of mathematical ideas. like multiplication and addition can be the quadratic formula
+    - square roots can be found quick with binary search.
