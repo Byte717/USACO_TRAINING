@@ -38,6 +38,7 @@ To Do List:
     - Imbalanced Arrays(Codeforces)
     - matchStick (Codeforces)
     - controllers(Codeforces)
+    - dual v1
 --------------------------------------------------------------------------------------------------------------------
 WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
 
