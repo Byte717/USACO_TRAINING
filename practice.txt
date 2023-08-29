@@ -192,3 +192,8 @@ What I learned Closest Cow Wins:
     - when segmenting the input in greedy, think of the things you can do for the best solution in each segment
     - consider edge cases for an interval
     - two pointers/ sliding window can be limited to a length.
+
+What I learned Spilting the Field: 
+    - Min and Max Prefix sums, and suffix sums
+    - Sorting points
+    - Minimum enclosing area
