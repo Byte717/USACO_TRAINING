@@ -201,4 +201,7 @@ What I learned Spilting the Field:
 What I learned Power of Points:
     - Prefix sums imply summation and vice versa.
     - intervals can be counted as their length
-    - sort things, makes it easier. 
+    - sort things, makes it easier.
+
+what I learned Strong verticies: Revisit*****************
+    - maniplulate the mathematical conditions provided.
