@@ -197,3 +197,8 @@ What I learned Spilting the Field:
     - Min and Max Prefix sums, and suffix sums
     - Sorting points
     - Minimum enclosing area
+    
+What I learned Power of Points:
+    - Prefix sums imply summation and vice versa.
+    - intervals can be counted as their length
+    - sort things, makes it easier. 
