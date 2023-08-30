@@ -38,8 +38,8 @@ To Do List:
     - Imbalanced Arrays(Codeforces)
     - matchStick (Codeforces)
     - controllers(Codeforces)
-    - dual v1
-    - kth equality
+    - dual v1(Codeforces)
+    - kth equality(Codeforces)
 --------------------------------------------------------------------------------------------------------------------
 WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
 
