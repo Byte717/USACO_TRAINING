@@ -205,3 +205,7 @@ What I learned Power of Points:
 
 what I learned Strong verticies: Revisit*****************
     - maniplulate the mathematical conditions provided.
+    
+What I learned Walkway:
+    - think of base cases! AGAIN
+    - boil the problem to math.
