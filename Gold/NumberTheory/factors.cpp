@@ -32,6 +32,8 @@ void Sieve(){
             prime[i] = false;
         }
     }
+    prime[0] = false;
+    prime[1] = false;
 }
 
 int gcd(int x, int y){
