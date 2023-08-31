@@ -210,3 +210,6 @@ what I learned Strong verticies: Revisit*****************
 What I learned Walkway:
     - think of base cases! AGAIN
     - boil the problem to math.
+
+What I learned Pashmak's flowers:
+    - n * (n-1) /2  is the formula to use for combinations when everything is the same
