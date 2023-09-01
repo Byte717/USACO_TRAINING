@@ -2,8 +2,6 @@
 #define all(x) begin(x),end(x)
 #define rall(x) x.rbegin(), x.rend()
 
-#define debug
-
 typedef long long ll;
 
 using namespace std;
@@ -22,8 +20,6 @@ int LOG2(int n){
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    #ifdef debug
-        freopen("","r",stdin);
-    #endif
+    freopen("","r",stdin);
     return 0;
 }
