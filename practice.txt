@@ -213,8 +213,12 @@ What I learned Walkway:
 
 What I learned Pashmak's flowers:
     - n * (n-1) /2  is the formula to use for combinations when everything is the same
-    
+
 What I learned Caesar's legions: *** REVISIT *****
     - dp can be used to count states
     - add another dimention to dp when another state is needed
         - like, num footmen, num horseman, and current type
+
+What i learned Xenia And Bits:
+    - for queries, think segment trees.
+    - segment trees can do other queries as well
