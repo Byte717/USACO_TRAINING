@@ -1,4 +1,4 @@
-template <class T> class BIT {
+ template <class T> class BIT {
   private:
 	int size;
 	vector<T> bit;

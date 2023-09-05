@@ -222,3 +222,7 @@ What I learned Caesar's legions: *** REVISIT *****
 What i learned Xenia And Bits:
     - for queries, think segment trees.
     - segment trees can do other queries as well
+    
+what I learned Balanced Photo:
+    - use 2 data structures for asynchronous queries.
+    - BIT indexes can represent count arrays for inversion counting
