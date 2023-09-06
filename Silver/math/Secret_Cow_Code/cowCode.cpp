@@ -9,7 +9,8 @@ using namespace std;
 
 /*
  * solution: greedily compute the smallest k that contains the answer. 
- *
+ * WHat I learned Secret Cow Code:
+    - think of minimal solutions for infinite sequences.
  */
 
 

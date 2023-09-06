@@ -8,15 +8,14 @@ typedef long long ll;
 
 using namespace std; 
 
-int dirX[] = {-1, 0, 1, 0};
-int dirY[] = {0, 1, 0, -1};
+/*
+Solution: sort all points of a lifeGuard, starts and ends and iterate through. Then we keep a set for
+active guards. Greedily, you want to fire the guard that spends the most time alone. 
+So the prev time variable keeps a track of the last point's time. so if there are multiple cows till point, the total will be current point - prev, since
+if they all cover a collective amount of time. on the other case, there will be 1 cow in the set, so set its alone time accordingly
 
-int LOG2(int n){
-    int ret = 0; 
-    while((1<<(ret+1)) <= n){ret++;}
-    return ret;
-}
 
+*/
 struct shift{
     int time;
     int id;
