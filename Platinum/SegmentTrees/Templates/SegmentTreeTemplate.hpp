@@ -103,6 +103,7 @@ template <class T> class MaxSegTree{
         }
      }
 };
+
 /** @return the sum between a and b. */
 int sum(vector<ll> &segtree, int a, int b) {
 	int c = segtree.size() / 2;
@@ -128,3 +129,20 @@ void add(vector<ll> &segtree, int k, ll x) {
 	}
 }
 
+template<class T> class SegTree{
+    const T default = nullptr; // change later
+    vector<T> segTree;
+    int n;
+    public:
+        SegTree(int len){
+            n = len;
+            segTree.resize(2*n);
+            std::fill(segTree.begin(), segTree.end(),default);
+        }
+        void set(int idx, T val){
+
+        }
+        T query(int start, int end){
+        
+        }
+};

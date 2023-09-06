@@ -226,3 +226,6 @@ What i learned Xenia And Bits:
 what I learned Balanced Photo:
     - use 2 data structures for asynchronous queries.
     - BIT indexes can represent count arrays for inversion counting
+
+WHat I learned Secret Cow Code:
+    - think of minimal solutions for infinite sequences.
