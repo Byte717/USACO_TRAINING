@@ -229,3 +229,6 @@ what I learned Balanced Photo:
 
 WHat I learned Secret Cow Code:
     - think of minimal solutions for infinite sequences.
+
+What I learned Why Did the cow cross the road gold:
+    - shortest paths can also apply to grids
