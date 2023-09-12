@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define all(x) begin(x),end(x)
+#define all(x) x.begin(), x.end()
 #define rall(x) x.rbegin(), x.rend()
 
 typedef long long ll;
