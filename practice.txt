@@ -40,6 +40,7 @@ To Do List:
     - controllers(Codeforces)
     - dual v1(Codeforces)
     - kth equality(Codeforces)
+    - Tourist Problem (CF)
 --------------------------------------------------------------------------------------------------------------------
 WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
 
