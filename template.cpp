@@ -9,9 +9,6 @@ using namespace std;
 const ll INF = 1e18;
 const ll MOD = 1e9+7;
 
-const int dX[4] = {-1, 0, 1, 0};
-const int dY[4] = {0, 1, 0, -1};
-
 int LOG2(int n){
     int ret = 0; 
     while((1<<(ret+1)) <= n){ret++;}
