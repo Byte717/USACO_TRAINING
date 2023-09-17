@@ -233,3 +233,7 @@ WHat I learned Secret Cow Code:
 
 What I learned Why Did the cow cross the road gold:*********REVISIT******
     - shortest paths can also apply to grids
+    
+What I learned ColorStripe:
+    - break into cases for certain kinds of input, like , n < 2, and n > 2;
+    - think of the minimum change needed, this case, use just 3 characters;
