@@ -237,3 +237,7 @@ What I learned Why Did the cow cross the road gold:*********REVISIT******
 What I learned ColorStripe:
     - break into cases for certain kinds of input, like , n < 2, and n > 2;
     - think of the minimum change needed, this case, use just 3 characters;
+
+What I learned Boots: REVISIT
+    - dp can be used to figure out minimum, but just with trues and false
+    - Think of states for dp,

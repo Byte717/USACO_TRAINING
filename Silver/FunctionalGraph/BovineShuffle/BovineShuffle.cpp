@@ -5,18 +5,18 @@
 using namespace std; 
 
 int n;
-vector<int> adj;
+vector<int> a;
 
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("shuffle.in","r",stdin); freopen("shuffle.out","w",stdout);
     cin >> n;
-    adj = vector<int>(n,0);
+    a = vector<int>(n,0);
     vector<int> afterShuffle(n,0);
     for(int i = 0; i < n;i++){
-        cin >> adj[i];
-        adj[i]--;
+        cin >> a[i];
+        a[i]--;
         afterShuffle[a[i]]++;
     }
     int ans = n;
