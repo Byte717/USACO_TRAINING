@@ -41,6 +41,7 @@ To Do List:
     - dual v1(Codeforces)
     - kth equality(Codeforces)
     - Tourist Problem (CF)
+    - Teleportation (silver)
 --------------------------------------------------------------------------------------------------------------------
 WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
 
@@ -213,7 +214,7 @@ What I learned Walkway:
     - boil the problem to math.
 
 What I learned Pashmak's flowers:
-    - n * (n-1) /2  is the formula to use for combinations when everything is the same
+    - n * (n-1)/2  is the formula to use for combinations when everything is the same
 
 What I learned Caesar's legions: *** REVISIT *****
     - dp can be used to count states
