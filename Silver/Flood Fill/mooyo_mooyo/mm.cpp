@@ -62,7 +62,7 @@ int main(){
     };
 
     freopen("mooyomooyo.in","r",stdin);
-
+    freopen("mooyomooyo.out","w",stdout);
     cin >> n >> k;
     grid = vector<vector<int>>(n);
     visited = vector<vector<bool>>(n);

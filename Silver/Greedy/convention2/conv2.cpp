@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-    freopen("conv2.in","r",stdin);
+    freopen("convention2.in","r",stdin);
     int n; cin >> n; 
     vector<pair<int,pair<int,int>>> cows;
     for(int i = 0; i < n; i++){
@@ -19,7 +19,7 @@ int main(){
     sort(cows.begin(), cows.end());
     current_finished = cows[0].first + cows[0].second.second;
     while(nextCow < n || waiting.size() > 0){
-        while(nextCow < n && cows[nextCow].first <= current_finished){
+        while(nextCow < n && cows[nextCow].first <= current_finished){ // keep adding to waitlist
             waiting.insert(make_pair(cows[nextCow].second.first, nextCow));
             nextCow++;
         }
@@ -34,6 +34,7 @@ int main(){
             waiting.erase(most_Senior);
         }
     }
+    freopen("convention2.out","w",stdout);
     cout << ans << endl;
     return 0;
 }
