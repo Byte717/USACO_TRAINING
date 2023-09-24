@@ -14,6 +14,7 @@ const int WIDTH = 1000;
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("paintbarn.in","r",stdin);
+    freopen("paintbarn.out","w",stdout);
     int n, k; cin >> n >> k;
     int barn[WIDTH+1][WIDTH+1];
 

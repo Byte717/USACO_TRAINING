@@ -242,3 +242,6 @@ What I learned ColorStripe:
 What I learned Boots: REVISIT
     - dp can be used to figure out minimum, but just with trues and false
     - Think of states for dp,
+
+What I learned Left Out: REVISIT
+    - think of the base case of a problem that invalidates a specific conditon

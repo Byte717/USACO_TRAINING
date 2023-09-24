@@ -18,9 +18,10 @@ What I learned:
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("","r",stdin);
+    freopen("herding.in","r",stdin);
+    freopen("herding.out","w",stdout);
     int n; cin >> n;
-    vector<int> herd(n);
+    vector<ll> herd(n);
     for(int i = 0; i < n;i++){
         cin >> herd[i];
     }
@@ -41,7 +42,7 @@ int main(){
     }
     int gapNum = 0; 
     for(int i = 1; i < n;i++){gapNum+= herd[i]-herd[i-1] + 1;}
-    int maxMoves = max(gapNum-(herd[1]-herd[0]-1), gapNum -(herd[n-1]-herd[n-2]-1));
+    int maxMoves = max(gapNum-(herd[1]-herd[0]-1), gapNum-(herd[n-1]-herd[n-2]-1));
     cout << minMoves << endl << maxMoves << endl;
     return 0;
 }
