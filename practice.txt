@@ -245,7 +245,7 @@ What I learned Boots: REVISIT
 
 What I learned Left Out: REVISIT
     - think of the base case of a problem that invalidates a specific conditon
-    
+
 What I learned Cow Steeple Chase 2:
     - for sweep line implementation:
         - Sort all points by x
@@ -255,3 +255,7 @@ What I learned Cow Steeple Chase 2:
             - if u cant, remove it and see if u can see a condition hold true between next and prev
         - now calculate answer
     - when sorted, compare to value below and above
+    
+What I learned Moobuzz: Revisit
+    - sequences tips:
+        -either find repitition or reconstruct based on condition
