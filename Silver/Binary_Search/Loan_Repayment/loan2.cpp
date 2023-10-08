@@ -42,7 +42,9 @@ int main(){
             }
         }
         return daysPassed <= k && leftOver <= 0; 
-    };
+    }; 
+
+    
     ll low = 1, high = 1e18, ans = -1;
     while(low <= high){
         ll mid = low + (high-low)/2;
