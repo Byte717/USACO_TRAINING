@@ -26,7 +26,7 @@ bool interact(part &p1, part &p2){
 }
 
 bool inRange(part &x){
-    return (interact(x,leftMost)) || (interact(x,topMost)) || (interact(x,bottomMost));
+    return (interact(x,leftMost)) || (interact(x,topMost)) || (interact(x,bottomMost)) || interact(x,rightMost);
 }
 
 bool cmp(const part &p1, const part &p2){
@@ -37,7 +37,7 @@ bool cmp(const part &p1, const part &p2){
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("moop.in","r",stdin);
-    // freopen("moop.out","w",stdout);
+    freopen("moop.out","w",stdout);
     int n; cin >> n;
     vector<part> particles;
     for(int i = 0; i < n;i++){
@@ -49,7 +49,6 @@ int main(){
 
     queue<part> active;
     int ans = 0;
-
     for(int i = 0; i < n;i++){
         // first see if active is empty
         if(active.size() == 0){
@@ -74,15 +73,19 @@ int main(){
                     rightMost = particles[i];
                 }
             }else{
-                ans++;
-                active = queue<part>{};
-                active.push(particles[i]);
-                bottomMost = topMost = leftMost = rightMost = particles[i];
+                // ans++;
+                // active = queue<part>{};
+                // active.push(particles[i]);
+                // bottomMost = topMost = leftMost = rightMost = particles[i];
             }
         }
     }
-
-    if(!active.empty()){
+    for(int i = 0; i < n;i++){
+        if(!inRange(particles[i])){
+            ans++;
+        }
+    }
+    if(ans == 0){
         ans++;
     }
     cout << ans << endl;
