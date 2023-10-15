@@ -259,3 +259,6 @@ What I learned Cow Steeple Chase 2:
 What I learned Moobuzz: Revisit
     - sequences tips:
         -either find repitition or reconstruct based on condition
+
+No Time to Paint:
+    - You can use prefix and suffix sums together to construct the answer
