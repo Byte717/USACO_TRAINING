@@ -41,7 +41,9 @@ To Do List:
     - dual v1(Codeforces)
     - kth equality(Codeforces)
     - Tourist Problem (CF)
-    - Teleportation (silver)
+    - Teleportation 
+    - subset equality
+    - teamwork(gold)
 --------------------------------------------------------------------------------------------------------------------
 WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
 
