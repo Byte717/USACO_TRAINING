@@ -264,3 +264,13 @@ What I learned Moobuzz: Revisit
 
 No Time to Paint:
     - You can use prefix and suffix sums together to construct the answer
+
+Cow Check List Gold: 
+    - dp follow the struture
+        if i > 1:
+
+        if j > 1
+
+        if i > 0 && j > 0:
+    - dp also is based off of past numbers 
+        dp[i] = dp[i-1] + some quantity
