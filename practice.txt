@@ -274,3 +274,12 @@ Cow Check List Gold:
         if i > 0 && j > 0:
     - dp also is based off of past numbers 
         dp[i] = dp[i-1] + some quantity
+
+Lasers And mirrors:
+    - map can be used to determine things on same x or y coordinate
+
+Cow Navigation: 
+    - multi source bfs can be useful for finding shortest paths from multiple sources
+
+Why cross 1 Gold:
+    - bfs isnt restricted to up, down, left, and right. You can go diagonally, and break it into 2 parts

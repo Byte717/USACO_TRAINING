@@ -17,6 +17,6 @@ int LOG2(int n){
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("","r",stdin);a
+    freopen("","r",stdin);
     return 0;
 }
