@@ -281,5 +281,5 @@ Lasers And mirrors:
 Cow Navigation: 
     - multi source bfs can be useful for finding shortest paths from multiple sources
 
-Why cross 1 Gold:
+Why cross 1 Gold:   
     - bfs isnt restricted to up, down, left, and right. You can go diagonally, and break it into 2 parts
