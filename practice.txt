@@ -44,6 +44,7 @@ To Do List:
     - Teleportation 
     - subset equality
     - teamwork(gold)
+    - devu partition
 --------------------------------------------------------------------------------------------------------------------
 WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
 
