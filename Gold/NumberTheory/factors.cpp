@@ -40,3 +40,28 @@ int gcd(int x, int y){
     if(y == 0) return x;
     return gcd(y, x%y); 
 }
+
+int lcm(int x, int y){
+    return x*y/gcd(x,y);
+}
+
+struct X{
+    ll n;
+    ll pow;
+};
+
+vector<X> PrimeFactors(ll n){
+    vector<X> ret; 
+    for(ll i = 2; i*i <= n;i++){
+        ll pow = 0;
+        while(n% i == 0){
+            pow++;
+        }
+        ret.push_back({i, pow});
+        n /= (i*pow);
+    }
+    if(n > 1){
+        ret.push_back({n,1});
+    }
+    return ret;
+}
