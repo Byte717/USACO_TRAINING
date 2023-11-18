@@ -284,3 +284,9 @@ Cow Navigation:
 
 Why cross 1 Gold:   
     - bfs isnt restricted to up, down, left, and right. You can go diagonally, and break it into 2 parts
+
+What I learned Informant:
+    - When contrainst are big, look for repetition
+        - like for example, when some operation is applied, when does it start to repeat?
+    - Question every given operation/contraints
+        - like why do we only apply a shift when a[i]= i? what happens when its not that.
