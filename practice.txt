@@ -290,3 +290,7 @@ What I learned Informant:
         - like for example, when some operation is applied, when does it start to repeat?
     - Question every given operation/contraints
         - like why do we only apply a shift when a[i]= i? what happens when its not that.
+What I learned Fine dining:
+    - Consider adding another node to a graph to use as a reference point
+    - for example, a node is needed to ensure that a path passes through certain nodes
+    
