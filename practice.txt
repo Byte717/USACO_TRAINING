@@ -294,3 +294,16 @@ What I learned Informant:
 What I learned Fine dining:
     - Consider adding another node to a graph to use as a reference point
     - for example, a node is needed to ensure that a path passes through certain nodes
+
+WHat I learned shorcut:
+    - its possible to find a possible shortest path using backtracking such as: 
+    
+    prev = the last node visited for the shortest path
+    vector<ll> occ(n);
+    for(int i = 0; i < n;i++){
+        int cur = i;
+        while(cur != INT32_MAX){
+            occ[cur] += fields[i];
+            cur = prev[cur];
+        }
+    }
