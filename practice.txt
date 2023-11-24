@@ -45,6 +45,7 @@ To Do List:
     - subset equality
     - teamwork(gold)
     - devu partition
+    - Cow Poetry
 --------------------------------------------------------------------------------------------------------------------
 WITH EVERY PROBLEM,ONE NEW THING SHOULD BE ADDED TO YOUR KNOWLEDGE AS ONE OF THE MENTIONED BEFORE.
 
@@ -293,4 +294,3 @@ What I learned Informant:
 What I learned Fine dining:
     - Consider adding another node to a graph to use as a reference point
     - for example, a node is needed to ensure that a path passes through certain nodes
-    
