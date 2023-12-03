@@ -3,7 +3,7 @@
 #define rall(x) x.rbegin(), x.rend()
 
 #pragma GCC optimize("O3","unroll-loops")
-
+#pragma GCC target("avx2,popcnt,lzcnt,abm,bmi,bmi2,fma,tune=native")
 
 typedef long long ll;
 
