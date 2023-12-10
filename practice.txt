@@ -323,3 +323,8 @@ WHat I learned Storage room:
 
 What I learned THeo's nighmares:
     - try to look at suffix sums for a change
+
+
+What I learned Q-sort:
+    - in weird sorting algo problems, theres is always an observation of how the numbers move
+        - Do elements go to the right faster? Do elements in a certain order make it impossible to sort?
