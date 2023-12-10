@@ -9,24 +9,23 @@ typedef long long ll;
 
 using namespace std;
 
-const ll INF = 1e18;
-const ll MOD = 1e9+7;
-
-template <unsigned int NumBits> struct uint {
-    uint64_t data : NumBits;
-};
-template <unsigned int NumBits> struct Int {
-    int64_t data : NumBits;
-};
-
-int LOG2(int n){
-    int ret = 0; 
-    while((1<<(ret+1)) <= n){ret++;}
-    return ret;
-}
-
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
+    int v; cin >> v;
+    if(v == 0){
+        cout << -1 << endl;
+        return 0;
+    }
+    vector<int> cost(9);
+    for(int i = 0; i < 9;i++){
+        cin >> cost[i];
+    }
+    string biggestDigits = "";
+    int temp = v;
+    for(int i = 8;i >= 0;i--){
+        if(temp == 0) break;
+        temp = cost[i]
+    }
     return 0;
 }

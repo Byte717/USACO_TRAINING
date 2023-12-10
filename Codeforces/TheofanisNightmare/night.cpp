@@ -25,8 +25,35 @@ int LOG2(int n){
     return ret;
 }
 
+
+void solve(){
+    int n; cin >> n;
+    vector<int> a(n);
+    for(int i = 0; i < n;i++){
+        cin >> a[i];
+    }
+    reverse(all(a));
+    vector<int> pref(n+1);
+    pref[0] = 0;
+    for(int i = 0; i < n;i++){
+        pref[i+1] = pref[i] + a[i];
+    }
+    int ans = pref[n];
+    for(int i = n-1;i >= 1;i--){
+        if(pref[i] > 0){
+            ans += pref[i];
+        }
+    }
+    cout << ans << endl;
+}
+
+
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
+    int t; cin >> t;
+    while(t--){
+        solve();
+    }
     return 0;
 }

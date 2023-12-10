@@ -12,10 +12,6 @@ using namespace std;
 const ll INF = 1e18;
 const ll MOD = 1e9+7;
 
-int binomial(int n, int k, int p=1) {
-        if (k == 0 || k == n) { return 1; }
-        return (binomial(n - 1, k - 1, p) + binomial(n - 1, k, p)) % p;
-}
 
 
 int main(){
@@ -25,10 +21,7 @@ int main(){
     ll a[3] = {r,g,b};
     sort(a,a+3);
     ll ans = 0;
-    ans+= a[0];
-    a[1] -= a[0];
-    a[2] -= a[0];
-    ans+= (a[1]+a[2])/3;
+    ans+= min((a[1]+a[2]+a[0])/3, a[0]+a[1]);
     cout << ans << endl;
     return 0;
 }

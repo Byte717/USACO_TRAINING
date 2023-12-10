@@ -310,3 +310,16 @@ WHat I learned shorcut:
 
 what I learned Cow Operations:
     - look for relationships between tasks. for example,in this problem, i need to know that for make a substring just c, that c amount depends on o and w, and some combo of the 2.
+
+
+What I learned powered addition:
+- Filter an array based on conditions
+    - eg. what is the minimum needed to make it sorted
+    - its sorted when arr[i-1] < arr[i]
+    - so add to a number when thats not met
+
+WHat I learned Storage room:
+    - bitwise operation narrows down numbers and 
+
+What I learned THeo's nighmares:
+    - try to look at suffix sums for a change
