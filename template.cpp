@@ -12,12 +12,6 @@ using namespace std;
 const ll INF = 1e18;
 const ll MOD = 1e9+7;
 
-template <unsigned int NumBits> struct uint {
-    uint64_t data : NumBits;
-};
-template <unsigned int NumBits> struct Int {
-    int64_t data : NumBits;
-};
 
 int LOG2(int n){
     int ret = 0; 

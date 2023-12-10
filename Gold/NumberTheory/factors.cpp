@@ -65,3 +65,10 @@ vector<X> PrimeFactors(ll n){
     }
     return ret;
 }
+
+template <unsigned int NumBits> struct uint {
+    uint64_t data : NumBits;
+};
+template <unsigned int NumBits> struct Int {
+    int64_t data : NumBits;
+};
