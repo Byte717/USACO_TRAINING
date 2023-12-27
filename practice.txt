@@ -327,4 +327,8 @@ What I learned THeo's nighmares:
 
 What I learned Q-sort:
     - in weird sorting algo problems, theres is always an observation of how the numbers move
-        - Do elements go to the right faster? Do elements in a certain order make it impossible to sort?
+        - Do elements go to the right faster? Do elements in a certain order make it impossible to sort?\
+
+What I learned Pond:
+    - If iterating for a fixed 2d grid, then its N^2
+        - u have points (i,j) and (i+k,j+k)
