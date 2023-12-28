@@ -332,3 +332,9 @@ What I learned Q-sort:
 What I learned Pond:
     - If iterating for a fixed 2d grid, then its N^2
         - u have points (i,j) and (i+k,j+k)
+
+
+WHat I learned array Collapse:
+    - for normal Subsequence counting problems, dp[i] can be number of sequences such that the sequence ends on ith value
+    - for this, dp[i] can be number of sequences on a prefix of length I
+    - sum of all dp such that I is a rightmost max
