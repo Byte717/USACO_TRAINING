@@ -1,0 +1,4 @@
+https://codeforces.com/problemset/problem/1925/B
+
+So given a problem with level x, we need to break it into n components such that gcd of those nummbers is max
+- gcd(a1...an) = gcd(a1, a1+a2, a1+a2+a3....a1+..an)

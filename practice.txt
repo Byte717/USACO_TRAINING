@@ -338,3 +338,6 @@ WHat I learned array Collapse:
     - for normal Subsequence counting problems, dp[i] can be number of sequences such that the sequence ends on ith value
     - for this, dp[i] can be number of sequences on a prefix of length I
     - sum of all dp such that I is a rightmost max
+
+- gcd(a1...an) = gcd(a1, a1+a2, a1+a2+a3....a1+..an)
+- Whenever 2 elements in a prefix sum are equal, the sum in between is 0
