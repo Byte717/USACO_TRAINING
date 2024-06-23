@@ -72,3 +72,13 @@ template <unsigned int NumBits> struct uint {
 template <unsigned int NumBits> struct Int {
     int64_t data : NumBits;
 };
+
+template <typename T> modExp(T x, T y, T p){
+    T res = (T)1;
+    while(y > 0){
+        if(y&1) res *= x;
+        y >>= 1;
+        x *= x;
+    }
+    return res % p
+}
