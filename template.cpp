@@ -2,6 +2,8 @@
 #define all(x) x.begin(), x.end()
 #define rall(x) x.rbegin(), x.rend()
 
+#define debug
+
 #ifndef debug
     #pragma GCC optimize("O3","unroll-loops")
     #pragma GCC target("avx2,popcnt,lzcnt,abm,bmi,bmi2,fma,tune=native")
