@@ -16,11 +16,11 @@ using namespace std;
 const ll INF = 1e18;
 const ll MOD = 1e9+7;
 
-vector<vector<int>> adj;
-vector<int> values;
+vector<vector<ll>> adj;
+vector<ll> values;
 
-pair<int,int> dfs(int node, int parent){
-    pair<int,int> curAns = {0,0};
+pair<ll,ll> dfs(ll node, ll parent){
+    pair<ll,ll> curAns = {0,0};
     for(auto & x : adj[node]){
         if(x != parent){
             auto subAns = dfs(x,node);
@@ -28,22 +28,22 @@ pair<int,int> dfs(int node, int parent){
             curAns.second = max(curAns.second, subAns.second);
         }
     }
-    int curOps = curAns.first - curAns.second + values[node];
+    ll curOps = curAns.first - curAns.second + values[node];
     if(curOps > 0)curAns.second += curOps;
     else curAns.first += (-curOps);
     return curAns;
 }
 
 void solve(){
-    int n; cin >> n;
+    ll n; cin >> n;
     adj.resize(n);
     values.resize(n);
-    for(int i = 0; i < n-1;i++){
-        int a,b; cin >> a >> b;
+    for(ll i = 0; i < n-1;i++){
+        ll a,b; cin >> a >> b;
         adj[--a].push_back(--b);
         adj[b].push_back(a);
     }
-    for(int i = 0; i < n;i++){
+    for(ll i = 0; i < n;i++){
         cin >> values[i];
     }
     auto [increments, decrements] = dfs(0,-1);
@@ -52,7 +52,7 @@ void solve(){
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("","r",stdin);
+    // freopen("","r",stdin);
     int t = 1;
     while(t--){
         solve();
