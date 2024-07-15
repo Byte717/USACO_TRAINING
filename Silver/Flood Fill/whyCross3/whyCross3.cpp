@@ -13,7 +13,7 @@ vector<vector<bool>> vis;
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("countcross.in","r",stdin);
+    // freopen("countcross.in","r",stdin);
     int n, k, r; cin >> n >> k >> r;
     vis = vector<vector<bool>>(n,vector<bool>(n,false));
     vector<vector<set<pair<int,int>>>> roads(n, vector<set<pair<int,int>>>(n));
@@ -53,6 +53,6 @@ int main(){
             }
         }
     }
-    freopen("countcross.out","w",stdout);
+    // freopen("countcross.out","w",stdout);
     cout << ans << endl;
 }
