@@ -44,7 +44,7 @@ void dfs(int node,int parent){
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("","r",stdin);
+    // freopen("","r",stdin);
     int n, m; cin >> n >> m;
     adj = vector<vector<pair<int,int>>>(m);
     edges.resize(n);

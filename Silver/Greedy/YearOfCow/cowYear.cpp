@@ -41,7 +41,7 @@ void solve(){
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    // freopen("cowYear.in","r",stdin);
+    freopen("cowYear.in","r",stdin);
     int t=1;
     while(t--){
         solve();

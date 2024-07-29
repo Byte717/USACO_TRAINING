@@ -17,7 +17,7 @@ int LOG2(int n){
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("","r",stdin);
+    // freopen("","r",stdin);
     int n; cin >> n;
     int sum = 0;
     vector<int> hay(n);
