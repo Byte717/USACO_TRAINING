@@ -20,18 +20,20 @@ int LOG2(int n){
 }
 
 
+int greedySol(int n, vector<int> a){ // greedily construct whatever gives you the minimum penalty
+    vector<int> first, second;
+    for(int i = 0; i < n;i++){
+
+    }
+}
+
 void solve(){
     int n; cin >> n;
     vector<int> a(n);
     for(int i = 0; i < n;i++){
         cin >> a[i];
     }
-    vector<vector<int>> dp(n+1, vector<int>(n+1,1e5));
-    for(int i = 0; i < n;i++){
-        for(int j = 0; j < n;j++){
-            
-        }
-    }
+    // minimum penalty if we are up to the ith point
 }
 
 int main(){
