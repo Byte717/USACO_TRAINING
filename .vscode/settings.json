@@ -73,4 +73,5 @@
         "valarray": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
+    "explorer.autoReveal": false
 }
