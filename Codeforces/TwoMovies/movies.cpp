@@ -17,14 +17,32 @@ const ll INF = 1e18;
 const ll MOD = 1e9+7;
 
 
-int LOG2(int n){
-    int ret = 0; 
-    while((1<<(ret+1)) <= n){ret++;}
-    return ret;
-}
 
 void solve(){
-    
+    int n; cin >> n;
+    vector<int> a(n), b(n);
+    for(auto &x : a){
+        cin >> x;
+    }
+    for(auto & x : b){
+        cin >> x;
+    }
+    int m1 = 0, m2 = 0, neg = 0, pos = 0;
+    for(int i = 0; i < n;i++){
+        if(a[i] > b[i]){
+            m1 += a[i];
+        }else if(a[i] < b[i]){
+            m2 += b[i];
+        }else{
+            neg += (a[i] < 0);
+            pos += (a[i] > 0);
+        }
+    }
+    int ans = -1e9;
+    for(int i = -neg; i <= pos;i++){
+        ans = max(ans, min(m1 +i, m2 +(pos-neg-i)));
+    }
+    cout << ans << endl;
 }
 
 int main(){

@@ -24,7 +24,17 @@ int LOG2(int n){
 }
 
 void solve(){
-    
+    int n; cin >> n;
+    vector<ll> d(n);
+    for(int i = 0; i <n;i++) cin >> d[i];
+    sort(all(d));
+    ll ans = 0, sum = 0;
+    for(int i = 0;i < n;i++){
+        ans -= (ll)(i*d[i]) - sum; // use i negative edges here
+        sum += d[i];
+    }
+    ans += d[n-1];
+    cout << ans << endl;
 }
 
 int main(){

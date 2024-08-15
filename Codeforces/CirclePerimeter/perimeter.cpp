@@ -23,8 +23,25 @@ int LOG2(int n){
     return ret;
 }
 
+ll distsq(ll x, ll y){
+    return x*x + y*y;
+}
+
 void solve(){
-    
+    ll r; cin >> r;
+    ll y = r;
+    ll ans = 0;
+    for(ll x = 0; x <= r;x++){
+        while(distsq(x, y) >= (r+1)*(r+1)){ // use "two pointers" to find max y
+            y--;
+        }
+        ll thresh = y;
+        while(distsq(x,thresh)  >= r*r && thresh > 0){ // then try all y with everything less than the max possible
+            thresh--;
+            ans++;
+        }
+    }
+    cout << ans*4 << endl;
 }
 
 int main(){

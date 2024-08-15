@@ -24,23 +24,29 @@ int LOG2(int n){
 }
 
 void solve(){
-    
+    int n, x, y; cin >> n >> x >> y;
+    x--; y--;
+    vector<int> a(n);
+    for(int i = y; i <= x;i++){
+        a[i] = 1;
+    }
+    for(int i = x+1; i < n;i++){
+        a[i] = a[i-1]*-1;
+    }
+    for(int i = y-1;i >= 0;i--){
+        a[i] = a[i+1]*-1;
+    }
+    for(int i = 0; i < n;i++){
+        cout << a[i] << "\n"[i == n-1];
+    }
 }
 
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
-    #ifdef LOCAL
-	auto _clock_start = chrono::high_resolution_clock::now();
-    #endif 
     int t = 1; cin >> t;
     while(t--){
         solve();
     }
-    #ifdef LOCAL
-    cerr << "Executed in " << chrono::duration_cast<chrono::milliseconds>(
-        chrono::high_resolution_clock::now()
-            - _clock_start).count() << "ms." << endl;
-    #endif
     return 0;
 }
