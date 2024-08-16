@@ -52,7 +52,7 @@ void solve(){
         int type; cin >> type;
         if(type == 1){
             int x,y; cin >> x >> y;
-            int XOR = pref[y]-pref[x-1];
+            int XOR = pref[y]^pref[x-1];
             x0^= XOR;
             x1 ^= XOR;
         }else{
