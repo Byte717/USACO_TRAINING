@@ -24,7 +24,12 @@ int LOG2(int n){
 }
 
 void solve(){
-    
+    int n; cin >> n;
+    vector<int> p(n);
+    for(int& i: p) cin >> i;
+    rotate(p.begin(), p.begin() + 1, p.end());
+    for(int i: p) cout << i << " ";
+    cout << "\n";
 }
 
 int main(){

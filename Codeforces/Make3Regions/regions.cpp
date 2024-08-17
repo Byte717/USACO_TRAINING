@@ -24,7 +24,19 @@ int LOG2(int n){
 }
 
 void solve(){
-    
+    int n;
+    cin >> n;
+    string s[2];
+    cin >> s[0] >> s[1];
+    int ans = 0;
+    for (int i = 1; i + 1 < n; i++) {
+        for (int j = 0; j <= 1; j++) {
+            if (s[j][i] == '.' && s[j][i + 1] == '.' && s[j][i - 1] == '.' && s[j ^ 1][i] == '.' && s[j ^ 1][i - 1] == 'x' && s[j ^ 1][i + 1] == 'x') {
+                ans++;
+            }
+        }
+    }
+    cout << ans << "\n";
 }
 
 signed main(){

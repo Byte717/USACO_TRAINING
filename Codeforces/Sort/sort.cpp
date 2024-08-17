@@ -24,12 +24,38 @@ int LOG2(int n){
 }
 
 void solve(){
-    
+    int n,q; cin >> n >> q;
+    string a, b; cin >> a >> b;
+    vector<vector<int>> pref1(n+1, vector<int>(26,0)), pref2(n+1, vector<int>(26,0));
+    for(int i = 0; i < n;i++){
+        pref1[i+1][a[i] - 'a']++;
+        for(int c = 0;c<26;c++){
+            pref1[i+1][c]+= pref1[i][c];
+        }
+    }
+    for(int i = 0; i < n;i++){
+        pref2[i+1][b[i] - 'a']++;
+        for(int c = 0;c<26;c++){
+            pref2[i+1][c]+= pref2[i][c];
+        }
+    }
+    while(q--){
+        int l, r; cin >> l >> r;
+        int diff = 0;
+        for(int c = 0; c < 26;c++){
+            int stringA = pref1[r][c] - pref1[l-1][c];
+            int stringB = pref2[r][c] - pref2[l-1][c];
+            if(stringA > stringB){
+                diff += abs(stringA-stringB);
+            }
+        }
+        cout << diff << endl;
+    }
 }
 
 signed main(){
     cin.tie(0)->sync_with_stdio(0);
-    freopen("","r",stdin);
+    // freopen("sort.in","r",stdin);
     #ifdef LOCAL
 	auto _clock_start = chrono::high_resolution_clock::now();
     #endif 
