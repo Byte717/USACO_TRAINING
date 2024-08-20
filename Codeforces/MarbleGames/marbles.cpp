@@ -26,7 +26,7 @@ void solve(){
     vector<int> ord(n);
     iota(all(ord),0);
     sort(all(ord), [&](int i,int j){
-        a[i] + b[i] > a[j] + b[j];
+        return a[i] + b[i] > a[j] + b[j];
     });
     ll ans = 0;
     for(int i = 0; i < n;i++){
