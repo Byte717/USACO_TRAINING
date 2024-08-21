@@ -27,45 +27,19 @@ template<typename T> inline bool flipped(T a,int i){return a&(1ll<<i);}
 template<typename T> inline T pow2(int exp){return (1ll << exp);}
 
 void solve(){
-    int n; cin >> n;
-    vector<ll> a(n);
-    for(int i = 0; i < n;i++){
-        cin >> a[i];
+    ll single, poly, uni;
+    cin >> single >> poly >> uni;
+    ll needPoly = (3 - poly % 3) % 3;
+    if (poly > 0 && needPoly > uni) {
+        cout << "-1\n";
+        return;
     }
-    ll low = 0, high = (1e9)*n;
-    while (low < high){
-        ll mid = low + (high-low)/2;
-        vector<ll> dp(n+1);
-        int p2 = n;
-        set<pair<ll,int>> pos;
-        pos.insert({dp[n],n});
-        ll sum = 0;
-        for(int j = n-1;i>= 0;j--){
-            while(sum > m){
-                sum -= a[p2-1];
-                pos.erase({dp[p2],p2});
-                p2--;
-            }
-            dp[j] = pos.begin()->first + a[j];
-            pos.insert({dp[j], j});
-            sum += a[j];
-        }
-        bool works = false;
-        sum = 0;
-        for(int j = 0; j < n;j++){
-            if(sum <= m && dp[j] <= m)
-                works = 1;
-            sum += a[j];
-        }
-        if(works){
-            high = mid;
-        }else{
-            low = mid;
-        }
-    }
-    cout << low << endl;
 
-    
+    uni -= needPoly;
+    poly += needPoly;
+
+    ll mn = single + uni / 3 + (uni % 3 + 1) / 2 + poly / 3;
+    cout << mn << '\n';
 }
 
 signed main(){

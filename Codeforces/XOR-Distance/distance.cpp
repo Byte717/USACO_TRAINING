@@ -16,18 +16,28 @@ using namespace std;
 const ll INF = 1e18;
 const ll MOD = 1e9+7;
 
-
-int LOG2(int n){
-    int ret = 0; 
-    while((1<<(ret+1)) <= n){ret++;}
-    return ret;
-}
-
 template<typename T> inline bool flipped(T a,int i){return a&(1ll<<i);}
-template<typename T> inline T pow2(int exp){return (1ll << exp);}
+
 
 void solve(){
-    
+    ll a, b, r; cin >> a >> b >>r;
+    ll x = 0;
+    bool firstBit = 1;
+    if(a > b) swap(a,b);
+    for(int i = 59;i >= 0;i--){
+        bool bitA = flipped<ll>(a,i);
+        bool bitB = flipped<ll>(b,i);
+        if(firstBit){
+            firstBit = 0;
+        }else{
+            if(!bitA && x+(1<<i) <= r){
+                x += (1<<i);
+                a^=(1<<i);
+                b ^= (1<<i);
+            }
+        }
+    }
+    cout << (b-a) << endl;
 }
 
 signed main(){

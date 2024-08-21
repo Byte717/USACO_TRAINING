@@ -5,8 +5,10 @@
 #define debug
 
 #ifndef debug
-    #pragma GCC optimize("O3","unroll-loops")
-    #pragma GCC target("avx2,popcnt,lzcnt,abm,bmi,bmi2,fma,tune=native")
+    #ifdef __GNUG__
+        #pragma GCC optimize("O3","unroll-loops")
+        #pragma GCC target("avx2,popcnt,lzcnt,abm,bmi,bmi2,fma,tune=native")
+    #endif
 #endif
 
 typedef long long ll;
@@ -23,11 +25,30 @@ int LOG2(int n){
     return ret;
 }
 
-template<typename T> inline bool flipped(T a,int i){return a&(1ll<<i);}
-template<typename T> inline T pow2(int exp){return (1ll << exp);}
-
 void solve(){
-    
+    int n, m; cin >> n >> m;
+    vector<string> arr(n);
+    for(int i = 0; i < n;i++){
+        cin >> arr[i];
+    }
+    vector<int> zeros(n);
+    for(int i = 0; i < n;i++){
+        for(auto & c : arr[i]){
+            if(c == '0'){
+                zeros[i]++;
+            }
+        }
+    }
+    int ans = 0;
+    for(int i = 0; i < n;i++){
+        ans += arr[i].size() - zeros[i];
+    }
+    sort(all(zeros));
+    reverse(all(zeros));
+    for(int i = 0; i < n;i++){
+        if(i%2) ans += zeros[i];
+    }
+    cout << (ans -1 >= m ? "Sasha" : "Anna") << endl;
 }
 
 signed main(){

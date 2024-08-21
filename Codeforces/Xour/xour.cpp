@@ -23,11 +23,20 @@ int LOG2(int n){
     return ret;
 }
 
-template<typename T> inline bool flipped(T a,int i){return a&(1ll<<i);}
-template<typename T> inline T pow2(int exp){return (1ll << exp);}
-
 void solve(){
-    
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    map<int,priority_queue<int>> mp;
+    for(int i = 0; i < n;i++){
+        cin >> a[i];
+        mp[a[i]>>2].push(-a[i]);
+    }
+    for(int i = 0; i < n;i++){
+        cout << -mp[a[i]>>2].top() << ' '; 
+        mp[a[i]>>2].pop(); 
+    }
+    cout << endl;
 }
 
 signed main(){
