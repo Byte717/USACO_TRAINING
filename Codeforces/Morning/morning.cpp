@@ -26,8 +26,26 @@ int LOG2(int n){
 template<typename T> inline bool flipped(T a,int i){return a&(1ll<<i);}
 template<typename T> inline T pow2(int exp){return (1ll << exp);}
 
+int dist(char cur, char to){
+    int a = cur-'0', b = to-'0';
+    if(cur == '0'){
+        a = 10;
+    }
+    if(to == '0'){
+        b = 10;
+    }
+    return abs(a-b);
+}
+
 void solve(){
-    
+    string s; cin >> s;
+    char cur = '1';
+    int ans = 0;
+    for(int i = 0; i < 4;i++){
+        ans += dist(cur, s[i]) + 1;
+        cur = s[i];
+    }
+    cout << ans << endl;
 }
 
 signed main(){

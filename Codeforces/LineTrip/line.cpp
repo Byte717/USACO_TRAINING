@@ -27,7 +27,17 @@ template<typename T> inline bool flipped(T a,int i){return a&(1ll<<i);}
 template<typename T> inline T pow2(int exp){return (1ll << exp);}
 
 void solve(){
-    
+    int n, x; cin >> n >> x;
+    vector<int> a(n);
+    for(int i = 0; i < n;i++){
+        cin >> a[i];
+    }
+    sort(all(a));
+    int ans = max((a[0]-0), 2*(x-a[n-1]));
+    for(int i = 1; i < n;i++){
+        ans = max(ans, a[i]-a[i-1]);
+    }
+    cout << ans << endl;
 }
 
 signed main(){

@@ -17,26 +17,35 @@ const ll INF = 1e18;
 const ll MOD = 1e9+7;
 
 
-int LOG2(int n){
-    int ret = 0; 
-    while((1<<(ret+1)) <= n){ret++;}
-    return ret;
-}
 
-template<typename T> inline bool flipped(T a,int i){return a&(1ll<<i);}
-template<typename T> inline T pow2(int exp){return (1ll << exp);}
+template<typename T> inline bool flipped(T a,ll i){return a&(1ll<<i);}
+template<typename T> inline T pow2(ll exp){return (1ll << exp);}
 
 void solve(){
-    
+    ll n, k; cin >> n >> k;
+    ll x=1;
+    for(ll i = 0; i < n;i++){
+        ll c; cin >> c; 
+        x *= c;
+    }
+    if(2023%x == 0){
+        cout << "YES" << endl;
+        cout << 2023/x << ' ';
+        for(ll i = 0; i < k-1;i++){
+            cout << "1" << " \n"[i==k-2];
+        }
+    }else{
+        cout << "NO" << endl;
+    }
 }
 
 signed main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
     #ifdef LOCAL
-    auto _clock_start = chrono::high_resolution_clock::now();
+	auto _clock_start = chrono::high_resolution_clock::now();
     #endif 
-    int t = 1; cin >> t;
+    ll t = 1; cin >> t;
     while(t--){
         solve();
     }
