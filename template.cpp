@@ -24,7 +24,7 @@ const ll MOD = 1e9+7;
 [this]  Capture the this pointer of the enclosing class
 */
 
-auto LOG2 = [](int n) -> int{
+const auto LOG2 = [](int n){
     int ret = 0; 
     while((1<<(ret+1)) <= n){ret++;}
     return ret;
