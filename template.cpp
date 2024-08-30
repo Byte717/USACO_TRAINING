@@ -15,13 +15,20 @@ using namespace std;
 
 const ll INF = 1e18;
 const ll MOD = 1e9+7;
+/* Quick hints:
+[]  Capture nothing (or, a scorched earth strategy?)
+[&] Capture any referenced variable by reference
+[=] Capture any referenced variable by making a copy
+[=, &foo]   Capture any referenced variable by making a copy, but capture variable foo by reference
+[bar]   Capture bar by making a copy; don't copy anything else
+[this]  Capture the this pointer of the enclosing class
+*/
 
-
-int LOG2(int n){
+auto LOG2 = [](int n) -> int{
     int ret = 0; 
     while((1<<(ret+1)) <= n){ret++;}
     return ret;
-}
+};
 
 template<typename T> inline bool flipped(T a,int i){return a&(1ll<<i);}
 template<typename T> inline T pow2(int exp){return (1ll << exp);}
