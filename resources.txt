@@ -1,2 +1,3 @@
-https://codetiger.me/project/usaco/
-https://earthshakira.github.io/a2oj-clientside/server/Ladders.html
+rankings -> https://codetiger.me/project/usaco/
+
+a2oj -> https://earthshakira.github.io/a2oj-clientside/server/Ladders.html

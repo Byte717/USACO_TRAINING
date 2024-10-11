@@ -36,7 +36,7 @@ template<typename T> inline T pow2(int exp){return (1ll << exp);}
 void solve(){
     
 }
-
+   
 signed main(){
     cin.tie(0)->sync_with_stdio(0);
     freopen("","r",stdin);
