@@ -63,3 +63,45 @@ template<class T> class utilites{
         }
         
 };
+
+
+class InputParser{
+    public:
+        InputParser (int &argc, char **argv, char **envp){
+            for (int i=1; i < argc; ++i) this->tokens.push_back(std::string(argv[i]));
+            for(int i = 0; envp[i] != nullptr; ++i){
+                auto tmp = std::string(envp[i]);
+                size_t pos = tmp.find('=');
+                this->envTokens[tmp.substr(0,pos)] = tmp.substr(pos+1);
+            }
+        }
+
+        const std::string& getCmdOption(const std::string &option) const{
+            std::vector<std::string>::const_iterator itr;
+            itr =  std::find(this->tokens.begin(), this->tokens.end(), option);
+            if (itr != this->tokens.end() && ++itr != this->tokens.end()){
+                return *itr;
+            }
+            static const std::string empty_string("");
+            return empty_string;
+        }
+
+        const std::string& getEnvOption(const std::string &option) const{
+            if(!this->envOptionExists(option)){ // dne
+                return std::string("");
+            }
+            return this->envTokens.find(option)->second;
+        }
+
+        bool cmdOptionExists(const std::string &option) const{
+            return std::find(this->tokens.begin(), this->tokens.end(), option)
+                   != this->tokens.end();
+        }
+
+        bool envOptionExists(const std::string &param) const{
+            return this->envTokens.find(param) != this->envTokens.end();
+        }
+    private:
+        std::vector <std::string> tokens;
+        std::unordered_map <std::string, std::string> envTokens;
+};
